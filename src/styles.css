@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+h1, .title {
+    color: #07AD8B;
+    font-family: 'Poppins';
+}
+
+h2, .subTitle {
+    color: #1D576B;
+    font-family: 'Poppins';
+}

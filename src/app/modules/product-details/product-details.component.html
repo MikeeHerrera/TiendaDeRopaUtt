@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row product-content">
+    <div class="col-sm product-image">
+      <div class="row">
+        <div class="col-2">
+          <div class="column">
+            <img src="http://lorempixel.com/400/400" alt="Nature" class="product-single-img"
+              (click)="this.myFunction($event.target);">
+          </div>
+          <div class="column">
+            <img src="http://lorempixel.com/400/400" alt="Snow" class="product-single-img"
+              (click)="this.myFunction($event.target);">
+          </div>
+          <div class="column">
+            <img src="http://lorempixel.com/400/400" alt="Mountains" class="product-single-img"
+              (click)="this.myFunction($event.target)">
+          </div>
+        </div>
+        <div class="col-10">
+          <img id="expandedImg" class="product-expand-img">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm product-info">
+      <h1>Camisa blanca UTT</h1>
+      <h2>Tallas</h2>
+      <div class="product-list-buttons">
+        <button class="product-btn btn">CH</button>
+        <button class="product-btn product-btn-active btn">M</button>
+        <button class="product-btn btn">G</button>
+      </div>
+      <h2>Descripción</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, tortor sed diam euismod eu dui, lectus tempor urna
+        dapibus venenatis placerat.</p>
+      <div class="form">
+        <h2>Precio: <span class="title">$180</span></h2>
+        <h2>Cantidad</h2>
+        <h1>
+          <select class="form-select">
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </h1>
+        <button class="btn product-btn-form">Comprar</button>
+        <button class="btn product-btn-form">Añadir</button>
+      </div>
+
+    </div>
+  </div>
