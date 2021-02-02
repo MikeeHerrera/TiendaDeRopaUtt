@@ -1,0 +1,18 @@
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer-img img{
+  height: 60px;
+  margin-bottom: 10px;
+}
+.footer-text{
+  color: #1d576b;
+}
+.footer-color {
+  background-color:  #49B08D;
+  height: 60px;
+  width: 100%;
+}
