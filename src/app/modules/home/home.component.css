@@ -1,0 +1,23 @@
+.container.row.col-md-6 text{
+  text-align: justify;
+  align-items: center;
+  margin-top: 150px;
+};
+
+.container.row.col-md-6 text.btn {
+
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+};
+
+.container.row.col-md-6.img{
+  border: 10px solid transparent;
+  padding: 15px;
+
+}
