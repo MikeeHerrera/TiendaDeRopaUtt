@@ -1,9 +1,13 @@
-.container.col-md-6 {
-  text-align: justify;
-  align-items: center;
-  margin-top: 200px;
-};
-
+/*
+/*
+.container one {
+  position: absolute; right: 0px;
+      height: 480px;
+      width: 600px;
+      overflow: hidden;
+      opacity:0.6;
+filter:alpha(opacity=40)
+}
  .container.row.col-md-6 text h3 {
   font-size: 18px;
    color:  #1abc9c;
@@ -11,9 +15,40 @@
    text-align: center;
    font-weight: bold;
 
-};
+}; */
 
-.container.row.col-md-6.img{
-position: fixed;
+.container h3{
+  font-size: 18px; color:  #1abc9c; font-weight: bold; text-align: left; font-weight: bold;
+}
 
+.container button{
+            background-color: #1a5276;
+            border: none;
+            color: white;
+            padding: 10px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+
+}
+.clothes h6{
+  font-weight: bold; font-size: 18px; text-align: center;
+}
+
+.clothes h5{
+  font-size: 18px; color:  #28b463; font-weight: bold; text-align: center;
+}
+
+.accesories h4{
+  text-align: center; color:  #1a5276; font-size: 30px;
+}
+
+.accesories h6{
+  font-weight: bold; font-size: 18px; text-align: center;
+}
+
+.accesories h5{
+  font-size: 18px; color:  #28b463; font-weight: bold; text-align: center;
 }
