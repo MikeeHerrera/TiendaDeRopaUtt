@@ -1,23 +1,19 @@
-.container.row.col-md-6 text{
+.container.col-md-6 {
   text-align: justify;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 200px;
 };
 
-.container.row.col-md-6 text.btn {
+ .container.row.col-md-6 text h3 {
+  font-size: 18px;
+   color:  #1abc9c;
+   font-weight: bold;
+   text-align: center;
+   font-weight: bold;
 
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 12px 28px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
 };
 
 .container.row.col-md-6.img{
-  border: 10px solid transparent;
-  padding: 15px;
+position: fixed;
 
 }
