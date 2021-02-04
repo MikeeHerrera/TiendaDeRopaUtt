@@ -123,6 +123,6 @@
   },
   "defaultProject": "tiendaUTT",
   "cli": {
-    "analytics": "e924be14-54a2-47ff-b606-b5e89680ec78"
+    "analytics": false
   }
 }

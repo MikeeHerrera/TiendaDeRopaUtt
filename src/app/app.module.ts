@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefaultModule } from './layouts/default/default.module';
 import { CompraComponent } from './modules/compra/compra.component';
+import { ProductDetailsComponent } from './modules/product-details/product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompraComponent,
+    ProductDetailsComponent,
 
 
   ],
