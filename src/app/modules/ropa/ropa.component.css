@@ -20,6 +20,8 @@
 .container nav{
   text-align: center;
   right: 100px;
+  position: absolute;
+  right: 50px;
 
 }
 
