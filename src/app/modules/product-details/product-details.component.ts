@@ -6,19 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
+  img: string = '../../../assets/products-images/photo-1610901119319-f7cc8281869c.jpg'
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  public myFunction(e) {
+    this.img = e.target.src
   }
-
-  public myFunction(imgs){
-    console.log(imgs);
-    var expandImg: any = document.getElementById("expandedImg");
-  var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
-  expandImg.parentElement.style.display = "block";
-  }
-
 }

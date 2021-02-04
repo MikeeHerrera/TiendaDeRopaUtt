@@ -4,7 +4,7 @@
     --secondary: #1D576B;
 }
 
-body{
+*{
     font-family: 'Poppins', medium;
 }
 h1, .title {
