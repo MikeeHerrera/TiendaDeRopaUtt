@@ -5,6 +5,8 @@
   align-items: center;
   padding: 30px;
   background-color: transparent;
+  position: fixed;
+  z-index: 1;
 }
 .navbar-navigation a{
   text-decoration: none;
