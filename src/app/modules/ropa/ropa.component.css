@@ -1,5 +1,7 @@
 .container h4{
-  color: #1a5276; font-size: 50px;
+  color: #1a5276;
+   font-size: 50px;
+   font-weight: bold;
 }
 
 .container img{
@@ -19,9 +21,8 @@
 
 .container nav{
   text-align: center;
-  right: 100px;
   position: absolute;
-  right: 50px;
+  right: 600px
 
 }
 
