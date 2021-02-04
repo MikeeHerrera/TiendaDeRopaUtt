@@ -1,0 +1,28 @@
+.container h4{
+  color: #1a5276;
+   font-size: 50px;
+   font-weight: bold;
+}
+
+.container img{
+  width: 400px; height: 400px;  overflow: hidden;
+}
+
+.row h6{
+  font-weight: bold; font-size: 18px; text-align: center;
+}
+
+.row h5{
+  font-size: 18px;
+   color: #28b463;
+   font-weight:bold;
+   text-align: center;
+}
+
+.container nav{
+  text-align: center;
+  position: absolute;
+  right: 600px
+
+}
+

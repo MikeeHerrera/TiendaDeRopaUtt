@@ -5,7 +5,11 @@ import { HomeComponent } from './modules/home/home.component';
 import { LoginComponent } from './modules/login/login.component';
 import { RopaComponent } from './modules/ropa/ropa.component';
 import { CompraComponent } from './modules/compra/compra.component';
+
+import { AccesoriosComponent } from './modules/accesorios/accesorios.component';
 import { ProductDetailsComponent } from './modules/product-details/product-details.component';
+
+
 
 
 const routes: Routes = [{
@@ -18,7 +22,7 @@ const routes: Routes = [{
   },
   {
     path: 'accesorios',
-    component:LoginComponent
+    component:AccesoriosComponent
 
   },
   {
