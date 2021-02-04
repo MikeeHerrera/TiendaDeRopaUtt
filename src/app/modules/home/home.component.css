@@ -48,6 +48,12 @@ filter:alpha(opacity=40)
   font-weight: bold;
   text-align: center;
 }
+
+.clothes h3 {
+  font-size: 30px;
+  color:#1a5276;
+  font-weight: bold;
+}
 .clothes button {
   font-size: 20px;
   color: black;
