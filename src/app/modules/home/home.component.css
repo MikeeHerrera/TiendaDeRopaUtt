@@ -18,41 +18,51 @@ filter:alpha(opacity=40)
 }; */
 
 .container h3 {
-  font-size: 18px;
+  font-size: 35px;
   color: #1abc9c;
   font-weight: bold;
   text-align: left;
   font-weight: bold;
+  font-family: 'Poppins-light';
 }
 
 .container button {
-  background-color: #1a5276;
+  background-color: #1D576B;
   border: none;
   color: white;
   padding: 10px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
+  font-family: 'Poppins-light';
+}
+
+.container p{
+  font-family: 'Poppins-light';
+  font-size: 25;
 }
 .clothes h6 {
   font-weight: bold;
-  font-size: 18px;
   text-align: center;
+  font-family: 'Poppins-light';
+   font-size: 25;
 }
 
 .clothes h5 {
-  font-size: 18px;
   color: #28b463;
   font-weight: bold;
   text-align: center;
+  font-family: 'Poppins-light';
+    font-size: 27;
 }
 
 .clothes h3 {
-  font-size: 30px;
-  color:#1a5276;
+  font-size: 50px;
+  color:#1D576B;
   font-weight: bold;
+  font-family: 'Poppins-light';
 }
 .clothes button {
   font-size: 20px;
@@ -64,21 +74,25 @@ filter:alpha(opacity=40)
 
 .accesories h4 {
   text-align: center;
-  color: #1a5276;
-  font-size: 30px;
+  color: #1D576B;
+  font-size: 60x;
+  font-family: 'Poppins-light';
+
 }
 
 .accesories h6 {
-  font-weight: bold;
-  font-size: 18px;
+
+  font-size: 30px;
   text-align: center;
+  font-family: 'Poppins-light';
+
 }
 
 .accesories h5 {
-  font-size: 18px;
+  font-size: 27px;
   color: #28b463;
-  font-weight: bold;
   text-align: center;
+  font-family: 'Poppins-light';
 }
 
 .accesories button {
@@ -87,7 +101,8 @@ filter:alpha(opacity=40)
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
-  border: 3px solid #1a5276;
+  border: 3px solid#1D576B;
+  font-family: 'Poppins-light';
 }

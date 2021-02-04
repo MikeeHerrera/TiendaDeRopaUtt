@@ -9,13 +9,14 @@
 }
 
 .row h6{
-  font-weight: bold; font-size: 18px; text-align: center;
+  font-weight: bold; font-size: 25px; text-align: center;
 }
 
 .row h5{
-  font-size: 18px;
+  font-size: 27px;
    color: #28b463;
-   font-weight:bold;
+   font-family: 'Poppins-light';
+   font-weight: normal;
    text-align: center;
 }
 
