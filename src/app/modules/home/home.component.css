@@ -1,108 +1,101 @@
-/*
-/*
-.container one {
-  position: absolute; right: 0px;
-      height: 480px;
-      width: 600px;
-      overflow: hidden;
-      opacity:0.6;
-filter:alpha(opacity=40)
+.container-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 600px;
+  margin-bottom: 140px;
 }
- .container.row.col-md-6 text h3 {
-  font-size: 18px;
-   color:  #1abc9c;
-   font-weight: bold;
-   text-align: center;
-   font-weight: bold;
-
-}; */
+.container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 90px;
+  height: 100%;
+}
+.button {
+  height: 36px;
+  width: 125px;
+  background: var(--secondary);
+  color: white;
+  border: none;
+}
+.container-text h3 {
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.container-img {
+  height: 600px;
+}
+.container-img img {
+  height: 100%;
+  width: 100%;
+  object-position: right;
+  object-fit: contain;
+}
 
 .container h3 {
   font-size: 35px;
-  color: #1abc9c;
+  color: var(--primary);
   font-weight: bold;
   text-align: left;
   font-weight: bold;
-  font-family: 'Poppins-light';
 }
-
-.container button {
-  background-color: #1D576B;
-  border: none;
-  color: white;
-  padding: 10px 40px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
+.info-clothes {
+  height: 350px;
+  display: grid;
+  grid-template-rows: 300px 50px;
+}
+.info-img {
+  width: 100%;
+  height: 100%;
+}
+.info-img img {
+  height: 300px;
+  width: 100%;
+  object-position: center;
+  object-fit: contain;
+}
+.info-text{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.info-text span{
+  color: var(--primary);
+  font-weight: light
+}
+.clothes-more{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.clothes-more h4{
+  color: var(--secondary);
+}
+.clothes-link{
+  cursor: pointer;
   font-weight: bold;
-  font-family: 'Poppins-light';
 }
-
-.container p{
-  font-family: 'Poppins-light';
-  font-size: 25;
-}
-.clothes h6 {
-  font-weight: bold;
-  text-align: center;
-  font-family: 'Poppins-light';
-   font-size: 25;
-}
-
-.clothes h5 {
-  color: #28b463;
-  font-weight: bold;
-  text-align: center;
-  font-family: 'Poppins-light';
-    font-size: 27;
-}
-
-.clothes h3 {
-  font-size: 50px;
-  color:#1D576B;
-  font-weight: bold;
-  font-family: 'Poppins-light';
-}
-.clothes button {
-  font-size: 20px;
-  color: black;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-}
-
-.accesories h4 {
-  text-align: center;
-  color: #1D576B;
-  font-size: 60x;
-  font-family: 'Poppins-light';
-
-}
-
-.accesories h6 {
-
-  font-size: 30px;
-  text-align: center;
-  font-family: 'Poppins-light';
-
+.clothes-link:hover{
+  color: var(--primary)
 }
 
 .accesories h5 {
   font-size: 27px;
-  color: #28b463;
+  color: var(--primary);
   text-align: center;
-  font-family: 'Poppins-light';
+}
+.accesories h4{
+  color: var(--secondary)
 }
 
 .accesories button {
   color: black;
-  padding: 10px 40px;
+  background: none;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  font-weight: bold;
-  border: 3px solid#1D576B;
-  font-family: 'Poppins-light';
+  font-size: 20px;
+  border: 3px solid var(--secondary);
 }
