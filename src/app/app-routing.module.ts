@@ -9,21 +9,16 @@ import { CompraComponent } from './modules/compra/compra.component';
 import { AccesoriosComponent } from './modules/accesorios/accesorios.component';
 import { ProductDetailsComponent } from './modules/product-details/product-details.component';
 
-
-
-
 const routes: Routes = [{
   path:'',
   component: DefaultComponent,
   children:[{
    path:'',
    component:HomeComponent
-
   },
   {
     path: 'accesorios',
     component:AccesoriosComponent
-
   },
   {
   path: 'ropa',
@@ -37,8 +32,6 @@ const routes: Routes = [{
     path: 'product-details',
     component:ProductDetailsComponent
     },
-
-
 ]
 }];
 
