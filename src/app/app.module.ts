@@ -4,21 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefaultModule } from './layouts/default/default.module';
-import { CompraComponent } from './modules/compra/compra.component';
-import { ProductDetailsComponent } from './modules/product-details/product-details.component';
+import { FullwidthModule } from './layouts/fullwidth/fullwidth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompraComponent,
-    ProductDetailsComponent,
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DefaultModule
+    DefaultModule,
+    FullwidthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

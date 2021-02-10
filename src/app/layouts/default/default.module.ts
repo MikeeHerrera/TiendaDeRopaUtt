@@ -1,30 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DefaultComponent } from './default.component';
-import { HomeComponent } from 'src/app/modules/home/home.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LoginComponent } from 'src/app/modules/login/login.component';
+
+import { DefaultComponent } from './default.component';
+import { HomeComponent } from 'src/app/modules/home/home.component';
 import { RopaComponent } from 'src/app/modules/ropa/ropa.component';
 import { AccesoriosComponent } from 'src/app/modules/accesorios/accesorios.component';
-import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
-import { HeaderComponent } from 'src/app/shared/components/header/header.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { CompraComponent } from 'src/app/modules/compra/compra.component';
+import { ProductDetailsComponent } from 'src/app/modules/product-details/product-details.component';
 
 
 @NgModule({
   declarations: [
     DefaultComponent,
     HomeComponent,
-    LoginComponent,
     RopaComponent,
     AccesoriosComponent,
-    FooterComponent,
-    HeaderComponent
+    CompraComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SharedModule
   ]
 })
 export class DefaultModule { }
