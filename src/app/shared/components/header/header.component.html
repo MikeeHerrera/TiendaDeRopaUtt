@@ -1,25 +1,25 @@
 <nav class="navbar " style="position: absolute;">
-  <div class="navbar-navigation">
-    <a routerLink="/" routerLinkActive="router-link-active">Inicio</a>
-    <a  routerLink="/ropa">Ropa</a>
-    <a routerLink="/accesorios">Accesorios</a>
-  </div>
-  <div class="navbar-img">
-    <img src="../../../../assets/principal_Logo.png" alt="">
-  </div>
-  <div class="navbar-profile" >
-    <div class="navbar-profile-search">
-      <div class="navbar-profile-icon">
-        <i class="fas fa-search"></i>
-      </div>
-      <div class="navbar-profile-input">
-        <input type="text" placeholder="Buscar">
-      </div>
+    <div class="navbar-navigation">
+        <a routerLink="/" routerLinkActive="router-link-active">Inicio</a>
+        <a routerLink="/ropa">Ropa</a>
+        <a routerLink="/accesorios">Accesorios</a>
     </div>
-    <div class="circle">
-      <i class="fas fa-shopping-bag"></i>
-      <div class="notification">12</div>
+    <div class="navbar-img">
+        <img src="../../../../assets/principal_Logo.png" alt="">
     </div>
-    <img class="navbar-profie-img" routerLink="/login" src="https://picsum.photos/200/300?random=3" alt="">
-  </div>
+    <div class="navbar-profile">
+        <div class="navbar-profile-search">
+            <div class="navbar-profile-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="navbar-profile-input">
+                <input type="text" placeholder="Buscar">
+            </div>
+        </div>
+        <div class="circle">
+            <i class="fas fa-shopping-bag" routerLink="/compra"></i>
+            <div class="notification">12</div>
+        </div>
+        <img class="navbar-profie-img" routerLink="/login" src="https://picsum.photos/200/300?random=3" alt="">
+    </div>
 </nav>
