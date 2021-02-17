@@ -10,67 +10,34 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-4 mb-4">
+    <div *ngFor="let product of twoProducts" class="col-md-4 mb-4">
       <div class="info-clothes">
         <div class="info-img">
-          <img src="../../../assets/ropa/sudaderanegra.png" alt="">
+          <img src="{{product.data.img}}" alt="">
         </div>
         <div class="info-text">
-          <h6>Sudadera negra</h6>
-          <span>$400.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="info-clothes">
-        <div class="info-img">
-          <img src="../../../assets/ropa/china.jpg" alt="">
-        </div>
-        <div class="info-text">
-          <h6>Sudadera negra</h6>
-          <span>$400.00</span>
+          <h6>{{product.data.name}}</h6>
+          <span>{{product.data.price}}.00</span>
         </div>
       </div>
     </div>
     <div class="col-4 clothes-more">
       <h4>Ropa</h4>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid iusto illum debitis quaerat facilis expedita magnam aut facere nesciunt explicabo!
+        Siente los colores de un tigre Blanco!, ropa para toda ocasión
       </p>
       <div class="clothes-link">
         <span>Ver más <i class="fas fa-long-arrow-alt-right"></i></span>
       </div>
     </div>
-    <div class="col-md-4 mb-4">
+    <div class="col-md-4 mb-4" *ngFor="let product2 of products">
       <div class="info-clothes">
         <div class="info-img">
-          <img src="../../../assets/ropa/jordan.jpg" alt="">
+          <img src="{{product2.data.img}}" alt="">
         </div>
         <div class="info-text">
-          <h6>Sudadera negra</h6>
-          <span>$400.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="info-clothes">
-        <div class="info-img">
-          <img src="../../../assets/ropa/king.jpg" alt="">
-        </div>
-        <div class="info-text">
-          <h6>Sudadera negra</h6>
-          <span>$400.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="info-clothes">
-        <div class="info-img">
-          <img src="../../../assets/ropa/playeranegra.jpg" alt="">
-        </div>
-        <div class="info-text">
-          <h6>Sudadera negra</h6>
-          <span>$400.00</span>
+          <h6>{{product2.data.name}}</h6>
+          <span>{{product2.data.price}}.00</span>
         </div>
       </div>
     </div>

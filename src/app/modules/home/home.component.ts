@@ -10,17 +10,38 @@ export class HomeComponent implements OnInit {
 
   constructor(private firestoreService: FirestoresService) { }
   products;
+  twoProducts=[]
+  error =null;
+  loader: boolean = true;
+
 
   ngOnInit(){
-    this.getProducts()
+    this.getProducts();
   }
-  getProducts (){
-    this.firestoreService.getProducts().then(data =>{
-      this.products = data;
-      console.log(this.products)
-    }).catch(err =>{
-      console.error(err)
+  async getProducts (){
+    this.loader=true;
+    this.error= null
+    try{
+      const response = await this.firestoreService.getProducts()
+      this.loader = false;
+      this.firstProducts(response)
+    }catch(err){
+      this.loader= false
+      this.error= err
+    }
+  }
+  firstProducts(products){
+    for(let i=0; i<2; i++){
+      this.twoProducts.push(products[i])
+    }
+    console.log(this.twoProducts)
+    this.deleteProductsArray(products,this.twoProducts[0].id,this.twoProducts[1].id);
+  }
+  deleteProductsArray(productsAll, id1, id2){
+   const result= productsAll.filter(productsNew =>{
+      return productsNew.id != id1 && productsNew.id != id2
     })
+    this.products = result;
+    console.log(this.products)
   }
-
 }
