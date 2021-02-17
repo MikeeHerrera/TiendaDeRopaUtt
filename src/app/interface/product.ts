@@ -1,4 +1,5 @@
 export interface Product {
+  state: boolean;
   name: String;
   price: number;
   description: String;
