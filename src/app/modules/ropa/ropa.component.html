@@ -1,60 +1,22 @@
- <body>
-   <div class="containerone" style="height: 150px;">
+<body>
+  <div class="containerone" style="height: 150px;">
 
-   </div>
- <div class="container" >
-    <h4 class="text-center" >ROPA</h4><br>
+  </div>
+  <div class="container-clothes">
+    <h2 class="cont-text">ROPA</h2>
     <div class="row">
-      <div class="col-md-4 image">
-        <img src="./assets/ropa/sudaderanegra.png" class="img-fluid" alt="..." max-width="rounded float-end">
-        <h6 >Sudadera negra </h6>
-        <h5 >$200.00</h5>
-      </div>
-      <div class="col-md-4">
-        <img src="./assets/ropa/china.jpg" class="img-fluid" alt="..." max-width="rounded float-end">
-        <h6 >Sudadera negra </h6>
-        <h5 >$200.00</h5>
-      </div>
-      <div class="col-md-4">
-        <img src="./assets/ropa/playeranegra.jpg" class="img-fluid" alt="..." max-width="rounded float-end">
-        <h6 >Sudadera negra </h6>
-        <h5 >$200.00</h5>
+      <div class="col-md-4" *ngFor="let item of imgs | paginate: { itemsPerPage: 9, currentPage: pageActual }">
+        <div class="info-clothes">
+          <div class="info-img">
+            <img src="../../../assets/ropa/sudaderanegra.png">
+          </div>
+          <div class="info-text">
+            <h6>Sudadera negra </h6>
+            <span>$400.00</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <img src="./assets/ropa/jordan.jpg" class="img-fluid" alt="..." max-width="rounded float-end">
-        <h6 >Sudadera negra </h6>
-        <h5 >$200.00</h5>
-      </div>
-      <div class="col-md-4">
-        <img src="./assets/ropa/king.jpg" class="img-fluid" alt="..." max-width="rounded float-end">
-        <h6 >Sudadera negra </h6>
-        <h5 >$200.00</h5>
-      </div>
-      <div class="col-md-4">
-        <img src="./assets/ropa/playeranegra.jpg" class="img-fluid" alt="..." max-width="rounded float-end">
-        <h6 >Sudadera negra </h6>
-        <h5 >$200.00</h5>
-      </div>
-    </div><br><br>
-    <nav aria-label="navigation ">
-      <ul class="pagination ">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+      <pagination-controls (pageChange)="pageActual = $event" class="pagination"></pagination-controls>
   </div>
 </body>
-<br><br><br>

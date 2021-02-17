@@ -6,7 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ropa.component.css']
 })
 export class RopaComponent implements OnInit {
+pageActual=1;
 
+ imgs= [
+    {img: "../../../assets/ropa/sudaderanegra.png" },
+    {img: "../../../assets/ropa/china.jpg"},
+    {img: "../../../assets/ropa/playeranegra.jpg" },
+    {img: "../../../assets/ropa/jordan.jpg"},
+    {img: "../../../assets/ropa/tattoface.jpg"},
+    {img: "../../../assets/ropa/china.jpg"},
+    {img: "../../../assets/ropa/sudaderanegra.png" },
+    {img: "../../../assets/ropa/china.jpg"},
+    {img: "../../../assets/ropa/playeranegra.jpg" },
+    {img: "../../../assets/ropa/jordan.jpg"},
+    {img: "../../../assets/ropa/tattoface.jpg"},
+    {img: "../../../assets/ropa/china.jpg"}
+  ]
   constructor() { }
 
   ngOnInit(): void {

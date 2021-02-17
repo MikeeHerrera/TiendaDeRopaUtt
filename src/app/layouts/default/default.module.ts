@@ -9,6 +9,12 @@ import { RopaComponent } from 'src/app/modules/ropa/ropa.component';
 import { AccesoriosComponent } from 'src/app/modules/accesorios/accesorios.component';
 import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -24,7 +30,13 @@ import { HeaderComponent } from 'src/app/shared/components/header/header.compone
   imports: [
     CommonModule,
     RouterModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserModule,
+    CarouselModule,
+    BrowserAnimationsModule,
+    IvyCarouselModule,
+    NgxPaginationModule
+
   ]
 })
 export class DefaultModule { }
