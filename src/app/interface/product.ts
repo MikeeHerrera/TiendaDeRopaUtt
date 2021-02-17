@@ -8,4 +8,5 @@ export interface Product {
   size: String;
   porcentage: number;
   img: String;
+  category: String;
 }

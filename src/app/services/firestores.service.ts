@@ -2,7 +2,6 @@ import { Product } from './../interface/product';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from '../../environments/environment';
-import { rejects } from 'assert';
 
 @Injectable({
   providedIn: 'root'
