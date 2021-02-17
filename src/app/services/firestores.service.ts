@@ -10,30 +10,34 @@ import { rejects } from 'assert';
 export class FirestoresService {
   constructor(private firestore: AngularFirestore) {}
 
-  refDB= this.firestore.collection(environment.collection);
+  refDB = this.firestore.collection(environment.collection);
 
   sendProduct(product: Product) {
-    this.firestore.collection(environment.collection).add(product).then(response =>{
-      console.log(response)
-    })
+    this.refDB
+      .add(product)
+      .then(response => {
+        console.log(response);
+      });
   }
 
-  getProducts(){
-    const products=[]
-    return new Promise((resolve, reject) =>{
-      this.refDB.get().subscribe(data =>{
-        data.forEach(hijo =>{
-          products.push({
-            id: hijo.id,
-            data: hijo.data()
-          })
-        })
-        resolve(products);
-      },
-      (err)=>{
-        reject('Ocurrio un error');
-      })
-    })
+  getProducts() {
+    const products = [];
+    return new Promise((resolve, reject) => {
+      this.refDB.get().subscribe(
+        data => {
+          data.forEach(hijo => {
+            products.push({
+              id: hijo.id,
+              data: hijo.data()
+            });
+          });
+          resolve(products);
+        },
+        err => {
+          reject('Ocurrio un error');
+        }
+      );
+    });
   }
   async getProduct(id: string) {
     try {
