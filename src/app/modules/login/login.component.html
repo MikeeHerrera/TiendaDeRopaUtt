@@ -5,20 +5,22 @@
     <div class="login-container-content">
         <img class="login-img-logo" src="../../../assets/principal_Logo.png">
         <h1 class="login-title">LOGIN</h1>
-        <button class="login-btn-google"><img class="login-google-logo" src="../../../assets/login_register/search.png">Sign
+        <button class="login-btn-google" (click)="onGoogle()"  ><img class="login-google-logo" src="../../../assets/login_register/search.png">Sign
             in with Google</button>
         <hr class="hr-text" data-content="Or">
-        <form>
+
+        <form [formGroup]="formLogin" (ngSubmit)="login($event)">
             <div>
                 <label for="email">Correo</label>
                 <input class="login-form-input" id="email" type="email" formControlName="email">
             </div>
             <div>
                 <label for="psw">Contraseña</label>
-                <input class="login-form-input" id="psw" type="password" formControlName="psw">
+                <input class="login-form-input" id="psw" type="password" formControlName="password">
             </div>
-        </form>
-        <button class="login-btn-continuar" routerLink="/" type="submit">Continuar</button>
+
+        <button  class="login-btn-continuar"  type="submit"  >Continuar</button>
+      </form>
         <p class="login-a-register">No tienes ninguna cuenta? <span><a routerLink="/register">Registrate</a></span></p>
     </div>
 </div>

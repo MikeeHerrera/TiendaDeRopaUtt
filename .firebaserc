@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tiendautt": {
+      "hosting": {
+        "tiendaUTT": [
+          "tiendautt"
+        ]
+      }
+    }
+  }
+}

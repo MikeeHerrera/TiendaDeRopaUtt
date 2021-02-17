@@ -8,7 +8,11 @@ import { DefaultModule } from './layouts/default/default.module';
 import { FullwidthModule } from './layouts/fullwidth/fullwidth.module';
 import {environment} from '../environments/environment'
 import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 import {HttpClientModule} from '@angular/common/http';
+import { AuthorizationService } from './services/auth/authorization.service'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,12 @@ import {HttpClientModule} from '@angular/common/http';
     AngularFireModule.initializeApp(environment.firebase),
     DefaultModule,
     FullwidthModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
-  providers: [],
+  providers: [AuthorizationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

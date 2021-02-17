@@ -11,11 +11,13 @@ import { ProductDetailsComponent } from './modules/product-details/product-detai
 import { FullwidthComponent } from './layouts/fullwidth/fullwidth.component';
 import { RegisterComponent } from './modules/register/register.component';
 
+
 const routes: Routes = [{
   path:'',
   component: DefaultComponent,
   children:[{
    path:'',
+
    component:HomeComponent
   },
   {

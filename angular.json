@@ -30,7 +30,6 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js"
-
             ]
           },
           "configurations": {
@@ -122,6 +121,10 @@
               "devServerTarget": "tiendaUTT:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

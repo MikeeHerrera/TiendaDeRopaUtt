@@ -17,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RouterModule,
     FlexLayoutModule,
 
+
   ],
   exports:[
     HeaderComponent,
