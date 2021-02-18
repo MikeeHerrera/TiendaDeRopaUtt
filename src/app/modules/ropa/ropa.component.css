@@ -1,10 +1,13 @@
 .cont-text {
   color: var(--secondary);
   text-align: center;
-  font-size: 35px;
+  font-size: 45px;
   text-decoration: none;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+
 }
+
+
 
 .container-clothes{
   margin-left: 60px;
@@ -51,17 +54,17 @@
   padding: 0.1875rem 0.625rem;
   border-radius: 0;
   text-decoration: none;
+
   }
 
 .pagination /deep/ .ngx-pagination {
   color: var(--secondary);
   width: 50%;
+  left: 0px;
   text-decoration: none;
-  display: block;
   display: inline-block;
-  text-align: center;
   margin-top: 50px;
-  margin-left: 500px;
+  margin-left: 420px;
   box-shadow: 0px 0px 5px 1px gray;
   font-size: 26px;
 }
