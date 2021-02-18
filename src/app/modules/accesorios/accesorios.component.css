@@ -36,6 +36,7 @@
 }
 
 .pagination /deep/ .ngx-pagination{
+  text-decoration: none;
   width: 50%;
   display: inline-block;
   text-align: center;
@@ -49,6 +50,7 @@
 .pagination /deep/ .ngx-pagination .current {
 background-color: white;
 color: var(--primary);
+text-decoration: none;
 }
 
 .pagination /deep/ .ngx-pagination button:hover{
