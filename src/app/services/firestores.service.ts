@@ -1,6 +1,6 @@
 import { Product } from './../interface/product';
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore,AngularFirestoreDocument } from '@angular/fire/firestore';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -18,7 +18,6 @@ export class FirestoresService {
         console.log(response);
       });
   }
-
   getProducts() {
     const products = [];
     return new Promise((resolve, reject) => {
@@ -38,15 +37,25 @@ export class FirestoresService {
       );
     });
   }
-  async getProduct(id: string) {
-    try {
-      const data = this.firestore
-        .collection(environment.collection)
-        .doc(id)
-        .get();
-      return data;
-    } catch (err) {
-      return err;
-    }
+  async getProductsByQuery(query: string){
+      const products =[]
+        return new Promise((resolve, reject) => {
+          this.firestore.collection(
+            'products', ref => ref.where('category', '==', query)).get().subscribe(
+            data => {
+              data.forEach(hijo => {
+                products.push({
+                  id: hijo.id,
+                  data: hijo.data()
+                });
+              });
+              resolve(products || []);
+            },
+            err => {
+              reject('Ocurrio un error');
+            }
+          );
+          })
+        }
   }
-}
+

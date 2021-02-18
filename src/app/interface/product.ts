@@ -7,6 +7,6 @@ export interface Product {
   discount: boolean;
   size: String;
   porcentage: number;
-  img: String;
+  img: [String];
   category: String;
 }

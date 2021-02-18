@@ -1,7 +1,7 @@
 .cont-text {
   color: var(--secondary);
   text-align: center;
-  font-size: 45px;
+  font-size: 40px;
   text-decoration: none;
   margin-bottom: 100px;
 
@@ -60,11 +60,10 @@
 .pagination /deep/ .ngx-pagination {
   color: var(--secondary);
   width: 50%;
-  left: 0px;
   text-decoration: none;
   display: inline-block;
   margin-top: 50px;
-  margin-left: 420px;
+  margin-left: 450px;
   box-shadow: 0px 0px 5px 1px gray;
   font-size: 26px;
 }

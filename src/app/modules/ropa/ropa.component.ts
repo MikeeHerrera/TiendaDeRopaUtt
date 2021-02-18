@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirestoresService } from 'src/app/services/firestores.service';
 
 @Component({
   selector: 'app-ropa',
@@ -6,74 +7,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ropa.component.css']
 })
 export class RopaComponent implements OnInit {
-pageActual=1;
+  pageActual= 1;
 
- imgs= [
-    {img: "../../../assets/ropa/china.jpg" },
-    {img: "../../../assets/ropa/chinasueterazul.jpg" },
-    {img: "../../../assets/ropa/gafasredondos.jpg" },
-    {img: "../../../assets/ropa/jordan.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/playeranegra.jpg" },
-    {img: "../../../assets/ropa/ribiapelolargo.jpg" },
-    {img: "../../../assets/ropa/sudaderanegra.png" },
-    {img: "../../../assets/ropa/tattoface.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/china.jpg" },
-    {img: "../../../assets/ropa/chinasueterazul.jpg" },
-    {img: "../../../assets/ropa/gafasredondos.jpg" },
-    {img: "../../../assets/ropa/jordan.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/playeranegra.jpg" },
-    {img: "../../../assets/ropa/ribiapelolargo.jpg" },
-    {img: "../../../assets/ropa/sudaderanegra.png" },
-    {img: "../../../assets/ropa/tattoface.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/china.jpg" },
-    {img: "../../../assets/ropa/chinasueterazul.jpg" },
-    {img: "../../../assets/ropa/gafasredondos.jpg" },
-    {img: "../../../assets/ropa/jordan.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/playeranegra.jpg" },
-    {img: "../../../assets/ropa/ribiapelolargo.jpg" },
-    {img: "../../../assets/ropa/sudaderanegra.png" },
-    {img: "../../../assets/ropa/tattoface.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/china.jpg" },
-    {img: "../../../assets/ropa/chinasueterazul.jpg" },
-    {img: "../../../assets/ropa/gafasredondos.jpg" },
-    {img: "../../../assets/ropa/jordan.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/playeranegra.jpg" },
-    {img: "../../../assets/ropa/ribiapelolargo.jpg" },
-    {img: "../../../assets/ropa/sudaderanegra.png" },
-    {img: "../../../assets/ropa/tattoface.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/china.jpg" },
-    {img: "../../../assets/ropa/chinasueterazul.jpg" },
-    {img: "../../../assets/ropa/gafasredondos.jpg" },
-    {img: "../../../assets/ropa/jordan.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-    {img: "../../../assets/ropa/playeranegra.jpg" },
-    {img: "../../../assets/ropa/ribiapelolargo.jpg" },
-    {img: "../../../assets/ropa/sudaderanegra.png" },
-    {img: "../../../assets/ropa/tattoface.jpg" },
-    {img: "../../../assets/ropa/king.jpg" },
-    {img: "../../../assets/ropa/pantalonnegro.jpg" },
-  ]
-
-  constructor() { }
+  constructor(private  fireService: FirestoresService) { }
+  products;
+  loader: boolean = true
+  error = null
 
   ngOnInit(): void {
+    this.getProducts('Ropa')
   }
-
+  async getProducts(query: string){
+    this.loader= true
+    this.error = null
+    try{
+      const newQuery = query.toLowerCase()
+      const response = await this.fireService.getProductsByQuery(newQuery)
+      console.log(response)
+      this.loader= false
+      this.products = response
+    }catch(err){
+      this.loader= false
+      this.error = err;
+    }
+  }
 }
