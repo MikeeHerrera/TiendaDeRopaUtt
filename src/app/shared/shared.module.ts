@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
+
   ],
   imports: [
     CommonModule,
@@ -21,6 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   exports:[
     HeaderComponent,
     FooterComponent
-  ]
+  ],
+
 })
 export class SharedModule { }
