@@ -24,7 +24,8 @@ export class AuthorizationService {
         this.user = user;
         localStorage.setItem('user', JSON.stringify(this.user));
 
-        this.userName = user.displayName;
+        this.userName = user.email;
+
         this.cargarData();
       } else {
         localStorage.setItem('user', null);
@@ -39,6 +40,7 @@ export class AuthorizationService {
       this.dataUser = JSON.parse(this.data);
       console.log(this.dataUser)
     }
+    
     // Método genérico para iniciar sesión con servicios
     async loginWithInstance(instance) {
       try {
