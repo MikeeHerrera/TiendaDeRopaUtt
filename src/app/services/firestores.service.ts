@@ -38,15 +38,9 @@ export class FirestoresService {
       );
     });
   }
-  async getProduct(id: string) {
-    try {
-      const data = this.firestore
-        .collection(environment.collection)
-        .doc(id)
-        .get();
-      return data;
-    } catch (err) {
-      return err;
-    }
+  getProductsByQuery(query: string):Promise<any>{
+    return new Promise((resolve, reject) =>{
+
+    })
   }
 }
