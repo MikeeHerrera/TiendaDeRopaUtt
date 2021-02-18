@@ -6,7 +6,7 @@
   margin-bottom: 50px;
 }
 .container-clothes h4 {
-  color: #1a5276;
+  color: var(--secondary);
   font-size: 50px;
   font-weight: bold;
 }
@@ -17,16 +17,16 @@
 }
 
 .info-img{
-  height: 400px;
-  width: 500px;
+  height: 350px;
+  width: 350px;
   /* background-color:crimson ; */
+  margin-left: 40px;
 }
 
 .info-img img {
   height: 100%;
   width: 100%;
   object-position: center;
-  object-fit: contain;
 
 }
 
@@ -43,27 +43,6 @@
   font-weight: light;
 }
 
-/* .pagination {
-  display: inline-block;
-  text-align: center;
-  margin-top: 50px;
-  margin-left: 500px;
-  box-shadow: 0px 0px 5px 1px gray;
-  font-size: 25px;
-}
-
-.pagination {
-  color: var(--secondary);
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-
-}
-
-.pagination.active {
-  color: var(--primary)
-} */
-
 .pagination /deep/ .ngx-pagination{
   width: 50%;
   display: inline-block;
@@ -71,7 +50,7 @@
   margin-top: 50px;
   margin-left: 500px;
   box-shadow: 0px 0px 5px 1px gray;
-  font-size: 30px;
+  font-size: 28px;
   color: var(--secondary);
 }
 
