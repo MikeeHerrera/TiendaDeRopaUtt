@@ -1,88 +1,103 @@
-<div class="container-main">
-  <div class="container-text">
-    <h3>Lorem, ipsum dolor.</h3>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere modi beatae optio dignissimos sapiente ratione, perspiciatis tenetur cum non quas.</p>
-    <button class="button">Ver más</button>
-  </div>
-  <div class="container-img">
-    <img src="../../../assets/ropa/pantalonnegro.jpg" alt="">
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div *ngFor="let product of twoProducts" class="col-md-4 mb-4">
-      <div class="info-clothes">
-        <div class="info-img">
-          <img src="{{product.data.img}}" alt="">
-        </div>
-        <div class="info-text">
-          <h6>{{product.data.name}}</h6>
-          <span>{{product.data.price}}.00</span>
-        </div>
-      </div>
+<body>
+  <div class="container-main">
+    <div class="container-text">
+      <h3>Lorem, ipsum dolor.</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere modi beatae optio dignissimos sapiente
+        ratione, perspiciatis tenetur cum non quas.</p>
+      <button class="button">Ver más</button>
     </div>
-    <div class="col-4 clothes-more">
-      <h4>Ropa</h4>
-      <p>
-        Siente los colores de un tigre Blanco!, ropa para toda ocasión
-      </p>
-      <div class="clothes-link">
-        <span>Ver más <i class="fas fa-long-arrow-alt-right"></i></span>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4" *ngFor="let product2 of products">
-      <div class="info-clothes">
-        <div class="info-img">
-          <img src="{{product2.data.img}}" alt="">
-        </div>
-        <div class="info-text">
-          <h6>{{product2.data.name}}</h6>
-          <span>{{product2.data.price}}.00</span>
-        </div>
-      </div>
+    <div class="container-img">
+      <img src="../../../assets/ropa/pantalonnegro.jpg" alt="">
     </div>
   </div>
-</div>
 
-<div class="container mt-4">
-  <div class="accesories">
-    <h4 class="text-center">Accesorios</h4>
-    <div class="row mt-4">
-      <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-          <img src="/assets/accesorios/libreta.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6>Sudadera negra </h6>
-            <h5>$200.00</h5>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let product of twoProducts" class="col-md-4 mb-4">
+        <div class="info-clothes">
+          <div class="info-img">
+            <img src="{{product.data.img}}" alt="">
+          </div>
+          <div class="info-text">
+            <h6>{{product.data.name}}</h6>
+            <span>{{product.data.price}}.00</span>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-          <img src="/assets/accesorios/usb.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6>Sudadera negra </h6>
-            <h5>$200.00</h5>
-          </div>
+      <div class="col-4 clothes-more">
+        <h4>Ropa</h4>
+        <p>
+          Siente los colores de un tigre Blanco!, ropa para toda ocasión
+        </p>
+        <div class="clothes-link">
+          <span>Ver más <i class="fas fa-long-arrow-alt-right"></i></span>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-          <img src="/assets/accesorios/taza.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h6>Sudadera negra </h6>
-            <h5>$200.00</h5>
+      <div class="col-md-4 mb-4" *ngFor="let product2 of products">
+        <div class="info-clothes">
+          <div class="info-img">
+            <img src="{{product2.data.img}}" alt="">
           </div>
-        </div>
-      </div>
-      <div class="col-md-3 ">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body text-center" style="margin-top: 150px; margin-bottom: 150px;">
-            <button type="button" routerLink="/accesorios">Ver más <i class="fas fa-arrow-right"> </i></button>
+          <div class="info-text">
+            <h6>{{product2.data.name}}</h6>
+            <span>{{product2.data.price}}.00</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
+  <div class="container-carousel">
+    <div class="carousel-text">
+      <h2>Accesorios</h2>
+    </div>
+    <div class="carousel-img ">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          <div class="card">
+            <img src="../../../assets/accesorios/libreta.jpg">
+            <div class="info-text">
+              <h6>Sudadera negra</h6>
+              <span>$400.00</span>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="card">
+            <img src="../../../assets/accesorios/taza.jpg">
+            <div class="info-text">
+              <h6>Sudadera negra</h6>
+              <span>$400.00</span>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="card">
+            <img src="../../../assets/accesorios/baso.jpg">
+            <div class="info-text">
+              <h6>Sudadera negra</h6>
+              <span>$400.00</span>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="card">
+            <img src="../../../assets/accesorios/bolsa.jpg">
+            <div class="info-text">
+              <h6>Sudadera negra</h6>
+              <span>$400.00</span>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="card">
+            <img src="../../../assets/accesorios/taza.jpg">
+            <div class="info-text">
+              <h6>Sudadera negra</h6>
+              <span>$400.00</span>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</body>
