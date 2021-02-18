@@ -1,23 +1,61 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
-
+import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 @Injectable()
 export class AuthorizationService {
+  // Atributos
+  data: any;
+  dataUser: any;
+  auth: boolean;
+  response: any;
+  user: any;
+  isLoggedIn: boolean;
+  redirectUrl: string;
 
 
 
-
-  constructor(private afAuth: AngularFireAuth) {
-
+  constructor(private afAuth: AngularFireAuth , private router: Router) {
+    this.afAuth.authState.subscribe((user) => {
+      if (user) {
+        this.isLoggedIn = true;
+        this.user = user;
+        localStorage.setItem('user', JSON.stringify(this.user));
+        this.cargarData();
+      } else {
+        localStorage.setItem('user', null);
+        this.isLoggedIn = false;
+      }
+    });
   }
+    // obtiene los datos del localStorage en caso de que exista un registro
+    // en el cache del navegador
+    cargarData() {
+      this.data = localStorage.getItem('user');
+      this.dataUser = JSON.parse(this.data);
+    }
+    // Método genérico para iniciar sesión con servicios
+    async loginWithInstance(instance) {
+      try {
+        await this.afAuth.signInWithPopup(instance);
+        this.router.navigate(['/']);
+      } catch (error) {
+      }
+    }
+
 
   //iniciar sesion
   async login(email: string, password: string) {
     try {
-      return this.afAuth.signInWithEmailAndPassword(email, password);
+      return this.afAuth.signInWithEmailAndPassword(email, password).then((res)=>{
+        this.dataUser = res.user;
+        console.log(res);
+      }).finally(()=> {
+        this.isLoggedIn = true;
+      });
+      this.router.navigate(['/']);
     }
     catch (error) {
       console.log(error)
@@ -38,14 +76,15 @@ export class AuthorizationService {
 
 
   async logout() {
-    try {
 
-      return this.afAuth.signOut();
+
+    await this.afAuth.signOut();
+     localStorage.removeItem('user');
+    this.isLoggedIn = false;
+    this.router.navigate(['/login']);
     }
-    catch (error) {
-      console.log(error)
-    }
-  }
+
+
   //hay un usuario
   hasUser() {
 
@@ -54,15 +93,10 @@ export class AuthorizationService {
   }
 
   //iniciar sesion con google
-  async loginGoogle() {
-    try {
-      //para abrir ventana emergente hacia Google
-      return this.afAuth.signInWithPopup(new firebase.default.auth.GoogleAuthProvider())
-        .then(console.log);
-    }
-    catch (error) {
-      console.log(error);
-    }
+  async loginGoogle()  {
+    let provider = new firebase.default.auth.GoogleAuthProvider();
+      this.loginWithInstance(provider);
+
   }
 
 }

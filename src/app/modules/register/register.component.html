@@ -9,7 +9,7 @@
       <form [formGroup]="form" (ngSubmit)="register($event)">
           <div>
               <label for="user">Nombre de usuario</label>
-              <input class="login-form-input" id="user" type="text" >
+              <input class="login-form-input" id="user" type="text" formControlName="user" >
           </div>
           <div>
               <label for="email">Correo</label>

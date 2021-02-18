@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
     this.buildForm();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
   }
 
   login(event: Event) {
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
         .then(() => {
 
           this.router.navigate(['/']);
-          // alert('Ingresaste correctamente ');
+
         })
         //si no es valido mostrar mensaje
         .catch(() => {

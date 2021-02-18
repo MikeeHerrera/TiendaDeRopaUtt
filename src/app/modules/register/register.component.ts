@@ -43,14 +43,14 @@ export class RegisterComponent implements OnInit {
   //validaciones de formulario
   private buildForm() {
     this.form = this.formBuilder.group({
-
+      user: ['', [Validators.required]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
   }
 
 
-//para Google
+  //para Google
   async onGoogle() {
 
     try {
