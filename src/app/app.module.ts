@@ -9,10 +9,12 @@ import { FullwidthModule } from './layouts/fullwidth/fullwidth.module';
 import {environment} from '../environments/environment'
 import {AngularFireModule} from '@angular/fire';
 import {HttpClientModule} from '@angular/common/http';
+import { CreateComponent } from './modulesAdmin/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
