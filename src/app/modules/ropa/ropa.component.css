@@ -42,17 +42,27 @@
   color: var(--primary);
   font-weight: light;
 }
+.pagination /deep/ .ngx-pagination a, .ngx-pagination button{
+  color: var(--secondary);
+  display: block;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 0;
+  text-decoration: none;
+  }
 
-.pagination /deep/ .ngx-pagination{
+.pagination /deep/ .ngx-pagination {
+  color: var(--secondary);
   width: 50%;
+  text-decoration: none;
+  display: block;
   display: inline-block;
   text-align: center;
   margin-top: 50px;
   margin-left: 500px;
   box-shadow: 0px 0px 5px 1px gray;
-  font-size: 28px;
-  color: var(--secondary);
+  font-size: 26px;
 }
+
 
 .pagination /deep/ .ngx-pagination .current {
 background-color: white;
