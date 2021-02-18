@@ -5,7 +5,7 @@
   <div class="container-accesories">
     <h2 class="cont-text">ACCESORIOS</h2>
     <div class="row">
-      <div class="col-md-4 " *ngFor="let item of imgs | paginate: { itemsPerPage: 9, currentPage: pageActual }">
+      <div class="col-md-4 " *ngFor="let item of imgs | paginate: { itemsPerPage: 10, currentPage: pageActual }">
         <div class="info-accesories">
           <div class="info-img">
             <img src="{{item.img}}">
@@ -16,9 +16,7 @@
           </div>
         </div>
       </div>
+      <pagination-controls (pageChange)="pageActual = $event" class="pagination"></pagination-controls>
     </div>
-    <div class="pagintion-controls">
-     <pagination-controls (pageChange)="pageActual = $event" class="pagination"></pagination-controls>
-    </div>
-    </div>
+  </div>
 </body>

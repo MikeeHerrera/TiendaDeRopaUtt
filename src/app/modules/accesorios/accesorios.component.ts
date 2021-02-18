@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccesoriosComponent implements OnInit {
   pageActual=1;
-  imgs= [
+  imgs=[
     {img: "../../../assets/accesorios/libreta.jpg"},
     {img: "../../../assets/accesorios/baso.jpg"},
     {img: "../../../assets/accesorios/bolsa.jpg"},
@@ -39,7 +39,52 @@ export class AccesoriosComponent implements OnInit {
     {img: "../../../assets/accesorios/libreta.jpg"},
     {img: "../../../assets/accesorios/baso.jpg"},
     {img: "../../../assets/accesorios/libreta.jpg"},
-    {img: "../../../assets/accesorios/baso.jpg"}
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/bolsa.jpg"},
+    {img: "../../../assets/accesorios/gorra.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/bolsa.jpg"},
+    {img: "../../../assets/accesorios/gorra.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/bolsa.jpg"},
+    {img: "../../../assets/accesorios/gorra.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/bolsa.jpg"},
+    {img: "../../../assets/accesorios/gorra.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/bolsa.jpg"},
+    {img: "../../../assets/accesorios/gorra.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/baso.jpg"},
+    {img: "../../../assets/accesorios/bolsa.jpg"},
+    {img: "../../../assets/accesorios/gorra.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+    {img: "../../../assets/accesorios/libreta.jpg"},
+
   ]
 
   constructor() { }

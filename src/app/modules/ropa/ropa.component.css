@@ -65,12 +65,14 @@
 } */
 
 .pagination /deep/ .ngx-pagination{
+  width: 50%;
   display: inline-block;
   text-align: center;
   margin-top: 50px;
   margin-left: 500px;
   box-shadow: 0px 0px 5px 1px gray;
-  font-size: 25px;
+  font-size: 30px;
+  color: var(--secondary);
 }
 
 .pagination /deep/ .ngx-pagination .current {

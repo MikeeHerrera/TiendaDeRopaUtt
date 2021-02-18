@@ -6,7 +6,7 @@
   margin-bottom: 50px;
 }
 .container-accesories h4 {
-  color: #1a5276;
+  color: var(--secondary);
   font-size: 50px;
   font-weight: bold;
 }
@@ -36,12 +36,14 @@
 }
 
 .pagination /deep/ .ngx-pagination{
+  width: 50%;
   display: inline-block;
   text-align: center;
   margin-top: 50px;
   margin-left: 500px;
   box-shadow: 0px 0px 5px 1px gray;
-  font-size: 25px;
+  font-size: 30px;
+  color: var(--secondary);
 }
 
 .pagination /deep/ .ngx-pagination .current {
@@ -49,9 +51,12 @@ background-color: white;
 color: var(--primary);
 }
 
-.ngx-pagination button:hover{
-  background-color: transparent;
+.pagination /deep/ .ngx-pagination button:hover{
+  color: var(--primary);
 }
+
+
+
 
 
 
