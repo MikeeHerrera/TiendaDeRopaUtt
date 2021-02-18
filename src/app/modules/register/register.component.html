@@ -1,12 +1,16 @@
 <div class="container-login">
-    <div class="login-container-img"></div>
+    <div class="login-container-img2"></div>
     <div class="login-container-content">
         <img class="login-img-logo" src="../../../assets/principal_Logo.png">
-        <h1 class="login-title">LOGIN</h1>
+        <h1 class="login-title">Crear Cuenta</h1>
         <button class="login-btn-google"><img class="login-google-logo" src="../../../assets/login_register/search.png">Sign
-            in with Google</button>
+            up with Google</button>
         <hr class="hr-text" data-content="Or">
         <form>
+            <div>
+                <label for="user">Nombre de usuario</label>
+                <input class="login-form-input" id="user" type="text" formControlName="user">
+            </div>
             <div>
                 <label for="email">Correo</label>
                 <input class="login-form-input" id="email" type="email" formControlName="email">
@@ -17,6 +21,6 @@
             </div>
         </form>
         <button class="login-btn-continuar" routerLink="/" type="submit">Continuar</button>
-        <p class="login-a-register">No tienes ninguna cuenta? <span><a routerLink="/register">Registrate</a></span></p>
+        <p class="login-a-register">Ya tienes una cuenta? <span><a routerLink="/login">Inicia Sesión</a></span></p>
     </div>
 </div>

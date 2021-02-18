@@ -8,9 +8,8 @@ import { CompraComponent } from './modules/compra/compra.component';
 
 import { AccesoriosComponent } from './modules/accesorios/accesorios.component';
 import { ProductDetailsComponent } from './modules/product-details/product-details.component';
-
-
-
+import { FullwidthComponent } from './layouts/fullwidth/fullwidth.component';
+import { RegisterComponent } from './modules/register/register.component';
 
 const routes: Routes = [{
   path:'',
@@ -18,12 +17,10 @@ const routes: Routes = [{
   children:[{
    path:'',
    component:HomeComponent
-
   },
   {
     path: 'accesorios',
     component:AccesoriosComponent
-
   },
   {
   path: 'ropa',
@@ -36,10 +33,20 @@ const routes: Routes = [{
   {
     path: 'product-details',
     component:ProductDetailsComponent
+    }]
+}, {
+  path: '',
+  component: FullwidthComponent,
+  children: [
+    {
+      path: 'login',
+      component: LoginComponent
     },
-
-
-]
+    {
+      path: 'register',
+      component: RegisterComponent
+    }
+  ]
 }];
 
 @NgModule({
