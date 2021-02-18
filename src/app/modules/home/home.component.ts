@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     navText: ['', 'Siguiente <i class="fas fa-long-arrow-alt-right"></i>'],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
         items: 2

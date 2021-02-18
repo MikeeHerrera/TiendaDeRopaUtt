@@ -5,6 +5,10 @@
   text-decoration: none;
   margin-bottom: 50px;
 }
+
+.container-clothes{
+  margin-left: 60px;
+}
 .container-clothes h4 {
   color: var(--secondary);
   font-size: 50px;
@@ -20,7 +24,6 @@
   height: 350px;
   width: 350px;
   /* background-color:crimson ; */
-  margin-left: 40px;
 }
 
 .info-img img {
