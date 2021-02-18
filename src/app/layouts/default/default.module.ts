@@ -41,4 +41,4 @@ import { ProductDetailsComponent } from 'src/app/modules/product-details/product
     SharedModule
   ]
 })
-export class DefaultModule { }
+export class DefaultModule{ }
