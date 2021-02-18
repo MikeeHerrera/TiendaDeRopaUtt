@@ -8,11 +8,12 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
+
   ],
   imports: [
     CommonModule,
@@ -24,6 +25,7 @@ import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
   exports:[
     HeaderComponent,
     FooterComponent
-  ]
+  ],
+
 })
 export class SharedModule { }
