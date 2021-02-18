@@ -158,7 +158,7 @@
     "universal-analytics" "0.4.20"
     "uuid" "7.0.2"
 
-"@angular/common@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/common@~9.1.1":
+"@angular/common@~9.1.1":
   "integrity" "sha512-QACUhJWlly/nfHUmjopVS1p6ayxxa/NqjyftdCeBJaoyM2YohqWixP/n/keu1K/srJ96aFpUNsZQgmgoRv5SOQ=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-9.1.13.tgz"
   "version" "9.1.13"
@@ -186,7 +186,7 @@
   "resolved" "https://registry.npmjs.org/@angular/compiler/-/compiler-9.1.13.tgz"
   "version" "9.1.13"
 
-"@angular/core@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/core@~9.1.1":
+"@angular/core@~9.1.1":
   "integrity" "sha512-mBm24Q9GjkAsxMAzqQ86U1078+yTEpr0+syMEruUtJ0HUH6Fzn3J+6xTLb+BVcGb9RkCkFaV9T5mcn6ZM0f++g=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-9.1.13.tgz"
   "version" "9.1.13"
@@ -215,12 +215,12 @@
   "resolved" "https://registry.npmjs.org/@angular/language-service/-/language-service-9.1.13.tgz"
   "version" "9.1.13"
 
-"@angular/platform-browser-dynamic@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/platform-browser-dynamic@~9.1.1":
+"@angular/platform-browser-dynamic@~9.1.1":
   "integrity" "sha512-jCeHyAZ4Nap1/FOqAlKEg9UxQaSkHrxnQr6hYtWwC4ZDVUn3zLWQf6J+mbeYNOXN5yQxEiIqqhORYeOCLLqf1w=="
   "resolved" "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-9.1.13.tgz"
   "version" "9.1.13"
 
-"@angular/platform-browser@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/platform-browser@~9.1.1":
+"@angular/platform-browser@~9.1.1":
   "integrity" "sha512-F3iTz1zNbtrs7KFKUxbj8qmTsd/fiuTNcpBExjE5TtatRiE6J8vNvN1+Z/1FgPe0UXBSdTzSwZ8/RxWKw20RMw=="
   "resolved" "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-9.1.13.tgz"
   "version" "9.1.13"
@@ -1011,12 +1011,12 @@
     "@firebase/util" "0.3.4"
     "tslib" "^1.11.1"
 
-"@firebase/app-types@0.6.1", "@firebase/app-types@0.x":
+"@firebase/app-types@0.6.1":
   "integrity" "sha512-L/ZnJRAq7F++utfuoTKX4CLBG5YR7tFO3PLzG1/oXXKEezJ0kRL3CMRoueBEmTCzVb/6SIs2Qlaw++uDgi5Xyg=="
   "resolved" "https://registry.npmjs.org/@firebase/app-types/-/app-types-0.6.1.tgz"
   "version" "0.6.1"
 
-"@firebase/app@0.6.14", "@firebase/app@0.x":
+"@firebase/app@0.6.14":
   "integrity" "sha512-ZQKuiJ+fzr4tULgWoXbW+AZVTGsejOkSrlQ+zx78WiGKIubpFJLklnP3S0oYr/1nHzr4vaKuM4G8IL1Wv/+MpQ=="
   "resolved" "https://registry.npmjs.org/@firebase/app/-/app-0.6.14.tgz"
   "version" "0.6.14"
@@ -1206,7 +1206,7 @@
     "@firebase/util" "0.3.4"
     "tslib" "^1.11.1"
 
-"@firebase/util@0.3.4", "@firebase/util@0.x":
+"@firebase/util@0.3.4":
   "integrity" "sha512-VwjJUE2Vgr2UMfH63ZtIX9Hd7x+6gayi6RUXaTqEYxSbf/JmehLmAEYSuxS/NckfzAXWeGnKclvnXVibDgpjQQ=="
   "resolved" "https://registry.npmjs.org/@firebase/util/-/util-0.3.4.tgz"
   "version" "0.3.4"
@@ -1706,6 +1706,13 @@
   "integrity" "sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM="
   "resolved" "https://registry.npmjs.org/alphanum-sort/-/alphanum-sort-1.0.2.tgz"
   "version" "1.0.2"
+
+"angular-responsive-carousel@^2.0.2":
+  "integrity" "sha512-ade+YNVnZiq7q7Ljwhp5jk+p/+zT+k+iRC1V+rjbRB93L6qqvoDOjSl6y7TugzMyvk/QumWVsFnQGlB9O3IRsQ=="
+  "resolved" "https://registry.npmjs.org/angular-responsive-carousel/-/angular-responsive-carousel-2.0.2.tgz"
+  "version" "2.0.2"
+  dependencies:
+    "tslib" "^2.0.0"
 
 "ansi-colors@^3.0.0":
   "integrity" "sha512-hHUXGagefjN2iRrID63xckIvotOXOojhQKWIPUZ4mNUZ9nLZW+7FMNoE1lOkEhNWYsx/7ysGIuJYCiMAA9FnrA=="
@@ -4152,7 +4159,7 @@
     "locate-path" "^5.0.0"
     "path-exists" "^4.0.0"
 
-"firebase@^7.0 || ^8.0", "firebase@^8.2.6":
+"firebase@^8.2.6":
   "integrity" "sha512-UHBAA8r7oIdbdafTGo3ED8wL9r/vdSgllN0yBzJMCyxk16DtL0oQnXRXwTU7FSc2c3JrvTUX9jtMFjtKjOUNMQ=="
   "resolved" "https://registry.npmjs.org/firebase/-/firebase-8.2.6.tgz"
   "version" "8.2.6"
@@ -6301,6 +6308,18 @@
   "integrity" "sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw=="
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
+
+"ngx-owl-carousel-o@^5.0.0":
+  "integrity" "sha512-wMfGEMu/cI61jAJQfSS82fMxGfmvSgCdoQ2bZfHZlHwdD1poOpzYkzPu/yTPzdw84gG2kK+sXSawm0X4Mproxg=="
+  "resolved" "https://registry.npmjs.org/ngx-owl-carousel-o/-/ngx-owl-carousel-o-5.0.0.tgz"
+  "version" "5.0.0"
+  dependencies:
+    "tslib" "^2.0.0"
+
+"ngx-pagination@^5.0.0":
+  "integrity" "sha512-Ur0pTWRe2ZXoJ8impEzo0IZKxY5aEcQfSmL5uBqW1rHI2J6nfzgZAHsSLagKHFGchXq0PkRlDVVMcIaNxYJwvQ=="
+  "resolved" "https://registry.npmjs.org/ngx-pagination/-/ngx-pagination-5.0.0.tgz"
+  "version" "5.0.0"
 
 "nice-try@^1.0.4":
   "integrity" "sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ=="
@@ -9051,7 +9070,7 @@
     "source-map-support" "^0.5.6"
     "yn" "^3.0.0"
 
-"tslib@^1.10.0", "tslib@^1.11.1", "tslib@^1.13.0", "tslib@^1.8.1", "tslib@^1.9.0":
+"tslib@^1.10.0", "tslib@^1.11.1", "tslib@^1.13.0", "tslib@^1.14.1", "tslib@^1.8.1", "tslib@^1.9.0":
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"

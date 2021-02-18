@@ -1,22 +1,25 @@
-<body>
-  <div class="containerone" style="height: 150px;">
+<div class="containerone" style="height: 150px;">
 
   </div>
   <div class="container-accesories">
-    <h2 class="cont-text">ACCESORIOS</h2>
-    <div class="row">
-      <div class="col-md-4 " *ngFor="let item of imgs | paginate: { itemsPerPage: 9, currentPage: pageActual }">
-        <div class="info-accesories">
-          <div class="info-img">
-            <img src="{{item.img}}">
-          </div>
-          <div class="info-text">
-            <h6>Libreta </h6>
-            <span>$30.00</span>
+    <div *ngIf="loader">Cargando....</div>
+    <div *ngIf="error"> Ocurrió un error intente mas tarde</div>
+    <div *ngIf="!loader && !error">
+      <h2 class="cont-text">ACCESORIOS</h2>
+      <div *ngIf="products.length ===0"> No hay productos en esta seccion</div>
+      <div class="row" *ngIf="products.length >0">
+        <div class="col-md-4 " *ngFor="let product of products" >
+          <div class="info-accesories">
+            <div class="info-img">
+              <img src="{{product.data.img}}">
+            </div>
+            <div class="info-text">
+              <h6>{{product.data.name}} </h6>
+              <span>${{product.data.price}}.00</span>
+            </div>
           </div>
         </div>
-      </div>
-      <pagination-controls (pageChange)="pageActual = $event" class="pagination"></pagination-controls>
+       </div>
     </div>
   </div>
-</body>
+
