@@ -60,7 +60,6 @@ export class HomeComponent implements OnInit {
     for(let i=0; i<2; i++){
       this.twoProducts.push(products[i])
     }
-    console.log(this.twoProducts)
     this.deleteProductsArray(products,this.twoProducts[0].id,this.twoProducts[1].id);
   }
   deleteProductsArray(productsAll, id1, id2){
@@ -68,6 +67,5 @@ export class HomeComponent implements OnInit {
       return productsNew.id != id1 && productsNew.id != id2
     })
     this.products = result;
-    console.log(this.products)
   }
 }
