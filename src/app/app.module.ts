@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +24,7 @@ import { AuthorizationService } from './services/auth/authorization.service';
     HttpClientModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]
