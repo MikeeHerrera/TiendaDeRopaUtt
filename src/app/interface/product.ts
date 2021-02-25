@@ -1,4 +1,5 @@
 export interface Product {
+  state: boolean;
   name: String;
   price: number;
   description: String;
@@ -6,5 +7,6 @@ export interface Product {
   discount: boolean;
   size: String;
   porcentage: number;
-  img: String;
+  img: [String];
+  category: String;
 }

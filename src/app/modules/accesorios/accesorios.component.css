@@ -1,34 +1,69 @@
-.accesories h4{
-  color: #1D576B;
-  font-size: 100px;
-  font-family: 'Poppins-light';
-}
-.accesories h4 {
+.cont-text {
+  color: var(--secondary);
   text-align: center;
-  color: #1D576B;
-  font-size: 30px;
+  font-size: 35px;
+  text-decoration: none;
+  margin-bottom: 50px;
 }
-
-.accesories h6 {
+.container-accesories h4 {
+  color: var(--secondary);
+  font-size: 50px;
   font-weight: bold;
-  font-size: 18px;
-  text-align: center;
 }
 
-.accesories h5 {
-  font-size: 18px;
-  color: #28b463;
-  font-weight: bold;
-  text-align: center;
-}
-
-.col-md-3{
+.info-accesories{
   margin-bottom: 15px;
 }
 
-.accesories nav{
-  text-align: center;
-  position: absolute;
-  right: 600px
-
+.info-img img {
+  height: 300px;
+  width: 100%;
+  object-position: center;
+  object-fit: contain;
 }
+
+.info-text {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-text span {
+  color: var(--primary);
+  font-weight: light;
+}
+.pagination /deep/ .ngx-pagination a, .ngx-pagination button{
+color: var(--secondary);
+display: block;
+padding: 0.1875rem 0.625rem;
+border-radius: 0;
+text-decoration: none;
+}
+
+.pagination /deep/ .ngx-pagination{
+  text-decoration: none;
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 500px;
+  box-shadow: 0px 0px 5px 1px gray;
+  font-size: 26px;
+  color: var(--secondary);
+}
+
+.pagination /deep/ .ngx-pagination .current {
+background-color: white;
+color: var(--primary);
+text-decoration: none;
+}
+
+
+
+
+
+
+
+

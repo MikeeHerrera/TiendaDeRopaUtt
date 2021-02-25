@@ -7,8 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { LoginComponent } from 'src/app/modules/login/login.component';
 import { RegisterComponent } from 'src/app/modules/register/register.component';
 import { PageNotFoundComponent } from 'src/app/modules/page-not-found/page-not-found.component';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,8 @@ import { PageNotFoundComponent } from 'src/app/modules/page-not-found/page-not-f
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class FullwidthModule { }

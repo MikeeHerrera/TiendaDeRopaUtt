@@ -91,3 +91,10 @@
   width: 30px;
   border-radius: 50%;
 }
+button {
+  background-color: red;
+  color:white;
+  margin: 10px;
+
+
+}
