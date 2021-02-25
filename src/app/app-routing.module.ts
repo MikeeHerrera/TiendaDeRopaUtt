@@ -10,6 +10,7 @@ import { AccesoriosComponent } from './modules/accesorios/accesorios.component';
 import { ProductDetailsComponent } from './modules/product-details/product-details.component';
 import { FullwidthComponent } from './layouts/fullwidth/fullwidth.component';
 import { RegisterComponent } from './modules/register/register.component';
+import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 
 const routes: Routes = [{
   path:'',
@@ -45,9 +46,14 @@ const routes: Routes = [{
     {
       path: 'register',
       component: RegisterComponent
+    },
+    {
+      path: 'error-404',
+      component: PageNotFoundComponent
     }
   ]
-}];
+},
+{ path: '**', component: PageNotFoundComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
