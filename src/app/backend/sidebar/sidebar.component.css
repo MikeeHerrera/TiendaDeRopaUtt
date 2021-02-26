@@ -1,0 +1,49 @@
+.sidebar-container{
+    height: 100vh;
+    background: var(--primary);
+    align-content: center;
+    position: fixed;
+    width: 250px;
+}
+
+.tigreShopLogo{
+    width: 100%;
+    height: 80px;
+    margin-top: 25px;
+    object-fit: contain;
+}
+
+.sidebar-menu{
+    margin-top: 55px;
+    width: 100%;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 45px;
+    
+}
+
+a{
+    /* display: inline-flex; */
+    width: 100%;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sidebar-salir{
+    margin-left: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    z-index: 0;
+    font-size: 20px;
+}

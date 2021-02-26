@@ -1,0 +1,50 @@
+.content404{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, var(--primary), var(--secondary));   
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 12fr;
+}
+
+.logo, .text{
+    margin: none;
+    top: 25%;
+    height: 400px;
+    position: relative;
+    text-align: center;
+}
+img{
+    width: 100%;
+    height: 250px;
+    object-position: center;
+    object-fit: contain;
+}
+
+.text{
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 45px;
+}
+
+.text2{
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    /* background: linear-gradient(90deg, var(--secondary), var(--primary)); */
+    border: solid 1.5px #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+a:hover{
+    background: var(--secondary);
+    transition: .5s;
+}

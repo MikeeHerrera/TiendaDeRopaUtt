@@ -6,21 +6,24 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { LoginComponent } from 'src/app/modules/login/login.component';
 import { RegisterComponent } from 'src/app/modules/register/register.component';
+import { PageNotFoundComponent } from 'src/app/modules/page-not-found/page-not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FullwidthRoutingModule } from './fullwidth-routing.module';
 
 @NgModule({
   declarations: [
     FullwidthComponent,
     LoginComponent,
     RegisterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FullwidthRoutingModule,
   ]
 })
 export class FullwidthModule { }
