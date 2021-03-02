@@ -7,7 +7,7 @@
   <div class="navbar-img">
     <img src="../../../../assets/principal_Logo.png" alt="">
   </div>
-  <p> usuario : {{auth.userName}} </p>
+  <!-- <p> {{auth.userName}} </p> -->
 
   <div class="navbar-profile" >
     <div class="navbar-profile-search">
@@ -26,6 +26,22 @@
     </div>
 
     <img class="navbar-profie-img" routerLink="/login" src="https://picsum.photos/200/300?random=3" alt="">
-    <button *ngIf="isLogged" (click)="logout()">Logout</button>
+    <!-- <button *ngIf="isLogged" (click)="logout()">Logout</button> -->
+    <div class="usuario" *ngIf="(isLogged && auth.email)">
+    <div class="dropdown">
+      <button class="dropbtn">
+
+
+        <p> {{auth.email}} </p></button>
+
+      <div class="dropdown-content">
+        <a class="dropdown-content--button" *ngIf="isLogged" (click)="logout()">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+
+      </div>
+    </div>
   </div>
+
+  </div>
+
 </nav>
+

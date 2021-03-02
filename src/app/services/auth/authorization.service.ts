@@ -15,7 +15,7 @@ export class AuthorizationService {
   isLoggedIn: boolean;
   redirectUrl: string;
   userName:any;
-
+ email:any;
 
   constructor(private afAuth: AngularFireAuth , private router: Router) {
     this.afAuth.authState.subscribe((user) => {
@@ -24,8 +24,8 @@ export class AuthorizationService {
         this.user = user;
         localStorage.setItem('user', JSON.stringify(this.user));
 
-        this.userName = user.email;
-
+        this.userName = user.displayName;
+   this.email= user.email;
         this.cargarData();
       } else {
         localStorage.setItem('user', null);
@@ -40,7 +40,7 @@ export class AuthorizationService {
       this.dataUser = JSON.parse(this.data);
       console.log(this.dataUser)
     }
-    
+
     // Método genérico para iniciar sesión con servicios
     async loginWithInstance(instance) {
       try {
