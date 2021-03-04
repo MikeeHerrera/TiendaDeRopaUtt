@@ -8,6 +8,7 @@ import { RopaComponent } from './ropa/ropa.component';
 import { AccesoriosComponent } from './accesorios/accesorios.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BackendRoutingModule } from './backend-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,7 +23,8 @@ import { BackendRoutingModule } from './backend-routing.module';
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    BackendRoutingModule
+    BackendRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class BackendModule { }
