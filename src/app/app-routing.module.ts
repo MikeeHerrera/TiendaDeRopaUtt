@@ -10,6 +10,8 @@ import { AccesoriosComponent } from './modules/accesorios/accesorios.component';
 import { ProductDetailsComponent } from './modules/product-details/product-details.component';
 import { FullwidthComponent } from './layouts/fullwidth/fullwidth.component';
 import { RegisterComponent } from './modules/register/register.component';
+import { createComponent } from '@angular/compiler/src/core';
+import { CreateComponent } from './modulesAdmin/create/create.component';
 
 const routes: Routes = [{
   path:'',
@@ -33,7 +35,13 @@ const routes: Routes = [{
   {
     path: 'product-details',
     component:ProductDetailsComponent
-    }]
+    },
+  
+  {
+
+  path:'agregar',
+  component:CreateComponent
+  }]
 }, {
   path: '',
   component: FullwidthComponent,

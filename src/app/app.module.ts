@@ -10,6 +10,9 @@ import {environment} from '../environments/environment'
 import {AngularFireModule} from '@angular/fire';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateComponent } from './modulesAdmin/create/create.component';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { CreateComponent } from './modulesAdmin/create/create.component';
     AngularFireModule.initializeApp(environment.firebase),
     DefaultModule,
     FullwidthModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireStorageModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
