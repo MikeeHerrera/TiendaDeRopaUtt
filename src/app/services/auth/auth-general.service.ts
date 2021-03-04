@@ -5,6 +5,7 @@ import { map, finalize } from 'rxjs/operators';
 import { Post } from '../../models/post';
 
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Product } from 'src/app/interface/product';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,12 +20,12 @@ export class AuthGeneralService {
     private firestore: AngularFirestore
     ) { }
 
-  public preAddAndUpdatePost(post:Post, image): void {
+  public preAddAndUpdatePost(post:Product, image): void {
     console.log(post, image)
     this.uploadImage(post, image);
   }
 
-  private uploadImage(post:Post, image) {
+  private uploadImage(post:Product, image) {
     this.filePath = `img/${image.name}`;
     const fileRef = this.storage.ref(this.filePath);
     const task = this.storage.upload(this.filePath, image);
@@ -39,35 +40,41 @@ export class AuthGeneralService {
       ).subscribe();
   }
 
-  private savePost(post: Post) {
-    console.log('echo',post.id)
+  private savePost(data: Product) {
+
+    // post.img   =this.downloadURL
+    // console.log('echo',post.id)
     const postObj = {
-      nombre: post.nombre,
-      descripcion: post.descripcion,
-      imagen: this.downloadURL,
-      fileRef: this.filePath,
-      talla: post.talla,
-      precio:  post.precio,
+      name: data.name,
+      category: data.category,
+      price: data.price,
+      description: data.description,
+      size: data.size,
+      porcentage: 50,
+      img: this.downloadURL,
+      discount: false,
+      state: true,
+      stock: 50
     };
-    if (post.id) {
-      this.firestore.collection("ropa").doc(post.id).update(post)
+    // if (post.id) {
+    //   this.firestore.collection("ropa").doc(post.id).update(post)
 
-      // return this.postsCollection.doc(post.id).update(postObj);
-    } else {
-      return new Promise<any>((resolve, reject) =>{
-        this.firestore
-            .collection("ropa")
-            .add(postObj)
-            .then(res => {}, err => reject(err));
-    });    }
+    //   // return this.postsCollection.doc(post.id).update(postObj);
+    // } else {
+    //     }
    
-
+    return new Promise<any>((resolve, reject) =>{
+      this.firestore
+          .collection("products")
+          .add(postObj)
+          .then(res => {}, err => reject(err));
+  });
   }
 
 
   //Metodo para cargar datos de la collección Ropa
   public getRopa(): Observable<Post[]> {
-    return this.firestore.collection("ropa")
+    return this.firestore.collection("products")
       .snapshotChanges()
       .pipe(
         map(actions =>
@@ -85,7 +92,7 @@ export class AuthGeneralService {
   deleteRopa (id) { 
  
         this.firestore 
-        .collection ("ropa") 
+        .collection ("products") 
         .doc (id) 
         .delete (); 
  }
@@ -95,7 +102,7 @@ export class AuthGeneralService {
 
  public editPostById(post: Post) {
    console.log(post.id)
-this.firestore.collection("ropa").doc(post.id).update(post)
+this.firestore.collection("products").doc(post.id).update(post)
 
 }
 
