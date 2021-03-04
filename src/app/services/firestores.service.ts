@@ -1,6 +1,6 @@
 import { Product } from './../interface/product';
 import { Injectable } from '@angular/core';
-import { AngularFirestore,AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -11,25 +11,17 @@ export class FirestoresService {
 
   refDB = this.firestore.collection(environment.collection);
 
+
   sendProduct(product: Product) {
-    this.refDB
-      .add(product)
-      .then(response => {
-        console.log(response);
-      });
+    this.refDB.add(product).then(response => {
+      console.log(response);
+    });
   }
   getProducts() {
-    const products = [];
     return new Promise((resolve, reject) => {
       this.refDB.get().subscribe(
         data => {
-          data.forEach(hijo => {
-            products.push({
-              id: hijo.id,
-              data: hijo.data()
-            });
-          });
-          resolve(products);
+          resolve(this.armyArray(data));
         },
         err => {
           reject('Ocurrio un error');
@@ -37,25 +29,31 @@ export class FirestoresService {
       );
     });
   }
-  async getProductsByQuery(query: string){
-      const products =[]
-        return new Promise((resolve, reject) => {
-          this.firestore.collection(
-            'products', ref => ref.where('category', '==', query)).get().subscribe(
-            data => {
-              data.forEach(hijo => {
-                products.push({
-                  id: hijo.id,
-                  data: hijo.data()
-                });
-              });
-              resolve(products || []);
-            },
-            err => {
-              reject('Ocurrio un error');
-            }
-          );
-          })
-        }
-  }
 
+  async getProductsByCategory(query: string) {
+    return new Promise((resolve, reject) => {
+      this.firestore
+        .collection('products', ref => ref.where('category', '==', query))
+        .get()
+        .subscribe(
+          data => {
+            resolve(this.armyArray(data));
+          },
+          err => {
+            reject('Ocurrio un error');
+          }
+        );
+    });
+  }
+  armyArray(data) {
+    const products = [];
+    data.forEach(hijo => {
+      products.push({
+        id: hijo.id,
+        data: hijo.data()
+      });
+    });
+    console.log(products ||[])
+    return products || [];
+  }
+}

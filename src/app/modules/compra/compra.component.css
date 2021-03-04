@@ -1,8 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-* {
-    font-family: 'Poppins';
-}
-
 .titulo {
     text-align: center;
     color: #1d576b;
@@ -10,15 +5,11 @@
     padding-bottom: 3vw;
 }
 
-.txt1 {
+.txt-resumen {
     color: #1d576b;
     font-weight: 500;
     text-align: center;
     padding-top: 5vw;
-}
-
-.txt2 {
-    font-weight: 500;
 }
 
 .txt {
@@ -38,13 +29,13 @@ h6 {
     color: #07ad8b;
 }
 
-.boton {
+#paypal {
     align-content: center;
     text-align: center;
     align-items: center;
 }
 
-.botn {
+.boton-eliminar {
     color: red;
     font-weight: 500;
     text-decoration: transparent;
@@ -57,7 +48,7 @@ td {
     vertical-align: middle;
 }
 
-.center {
+.txt-center {
     text-align: center;
 }
 
@@ -65,19 +56,19 @@ th {
     text-align: center;
 }
 
-.no {
+.txt-izquierda {
     text-align: justify;
 }
 
-.gris {
+.btn-sumres {
     color: rgb(199, 199, 199);
     text-decoration: transparent;
     margin-left: 3px;
     margin-right: 3px;
 }
 
-.img {
-    width: 200px;
+.img-producto {
+    width: 15vw;
     align-items: "center";
     text-align: center;
 }
@@ -87,6 +78,11 @@ th {
     margin-left: 0px;
 }
 
-.img1 {
+.imgPaypal {
     width: 60px;
+}
+
+.uniontxt {
+    display: block;
+    margin-top: 8.5vw;
 }
