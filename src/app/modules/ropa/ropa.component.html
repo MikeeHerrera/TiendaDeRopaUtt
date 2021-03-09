@@ -9,7 +9,7 @@
       <h2 class="cont-text">ROPA</h2>
       <div *ngIf="products.length ===0"> No hay productos en esta seccion</div>
       <div class="row">
-        <div class="col-md-4" *ngFor="let product of products">
+        <div class="col-md-4" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: pageActual }">
           <div class="info-clothes">
             <div class="info-img">
               <img src="{{product.data.img}}">
@@ -20,6 +20,7 @@
             </div>
           </div>
         </div>
+        <pagination-controls (pageChange)="pageActual = $event" class="pagination"></pagination-controls>
       </div>
     </div>
   </div>
