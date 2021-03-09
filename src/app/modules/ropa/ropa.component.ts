@@ -7,6 +7,7 @@ import { FirestoresService } from 'src/app/services/firestores.service';
   styleUrls: ['./ropa.component.css']
 })
 export class RopaComponent implements OnInit {
+  pageActual= 1;
 
   constructor(private  fireService: FirestoresService) { }
   products;

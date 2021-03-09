@@ -1,9 +1,9 @@
 .cont-text {
   color: var(--secondary);
   text-align: center;
-  font-size: 35px;
+  font-size: 40px;
   text-decoration: none;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 .container-accesories h4 {
   color: var(--secondary);
@@ -47,8 +47,8 @@ text-decoration: none;
   width: 50%;
   display: inline-block;
   text-align: center;
-  margin-top: 50px;
-  margin-left: 500px;
+  margin-top: 80px;
+  margin-left: 470px;
   box-shadow: 0px 0px 5px 1px gray;
   font-size: 26px;
   color: var(--secondary);
