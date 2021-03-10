@@ -11,16 +11,19 @@
   font-weight: bold;
 }
 
+.container-content .row{
+  margin: 40px;
+}
 .info-clothes{
-  margin-bottom: 15px;
-  /* background-color: cornflowerblue; */
+  margin-bottom: 20px;
+  /* background-color: red; */
+  margin-left: 15px;
 }
 
 .info-img{
   height: 350px;
-  width: 350px;
+  width: 100%;
   /* background-color:crimson ; */
-  margin-left: 40px;
 }
 
 .info-img img {
@@ -67,11 +70,10 @@
 .pagination /deep/ .ngx-pagination .current {
 background-color: white;
 color: var(--primary);
+text-decoration: none;
 }
 
-.ngx-pagination button:hover{
-  background-color: transparent;
-}
+
 
 
 

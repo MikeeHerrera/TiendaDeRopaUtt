@@ -8,15 +8,17 @@ import { FirestoresService } from 'src/app/services/firestores.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  customOptions: any = {
+  customOptions: OwlOptions  = {
     loop: true,
+    margin:10,
+    items:3,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,
     startPosition: 1,
     navSpeed: 700,
-    navText: ['', 'Siguiente <i class="fas fa-long-arrow-alt-right"></i>'],
+    navText: ['','Siguiente <i class="fas fa-long-arrow-alt-right"></i>'],
     responsive: {
       0: {
         items: 1
@@ -26,13 +28,12 @@ export class HomeComponent implements OnInit {
       },
       740: {
         items: 3
-      },
-      940: {
-        items: 4
       }
     },
     nav: true
   }
+
+
 
   constructor(private firestoreService: FirestoresService) { }
   products;
@@ -69,3 +70,4 @@ export class HomeComponent implements OnInit {
     this.products = result;
   }
 }
+

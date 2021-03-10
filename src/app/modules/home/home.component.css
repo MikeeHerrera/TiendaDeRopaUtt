@@ -1,3 +1,4 @@
+
 .container-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -12,6 +13,7 @@
   padding-left: 90px;
   height: 100%;
 }
+
 .button {
   height: 36px;
   width: 125px;
@@ -27,10 +29,7 @@
 .container-img {
   height: 600px;
 }
-/* .carousel-info{
-  box-shadow: 0px 0px 5px 1px gray;
-  background-color: blue;
-} */
+
 .container-img img {
   height: 100%;
   width: 100%;
@@ -96,7 +95,9 @@
  margin-top: 170px;
 margin-bottom: 150px;
 
+
 }
+
 .container-carousel{
   position: relative;
 }
@@ -105,37 +106,52 @@ margin-bottom: 150px;
   color: var(--primary);
 }
 
-.carousel-img {
+.carousel-content {
   position: relative;
-  /* background-color: teal; */
   padding-top: 20px;
+  width: 76%;
+  border-style: none;
 }
 .card{
   width: 300px;
   height: 400px;
-  /* padding: 20px; */
   box-shadow: 0px 13px 13px  gray;
   position: relative;
   margin-bottom: 20px;
+  z-index: 0;
 }
 
-.card img{
-  position: relative;
-}
 
-/*sdlfidsilfjildsjflidsjfidsjfldjsflsd*/
-
-
-.carousel-img button{
-  background-color: white;
+.container-carousel /deep/.owl-theme .owl-nav [class*=owl-]{
+  font-size:16px;
+  margin:5px;
+  padding:4px 7px;
+  background:white;
+  display:inline-block;
+  cursor:pointer;
   color: black;
-  /* font-weight: bold; */
+  font-weight: bold;
   border: 3px solid var(--secondary);
-  height: 40px;
-  width: 130px;
-  position: absolute;
-  right: 0px;
-  top: 40%;
+  height: 50px;
+  width: 150px;
+  position: relative;
+  bottom:  19em;
+  left: 36em;
+  padding: 10px;
+  z-index: 3;
 }
-
+.container-carousel /deep/.owl-carousel .owl-nav .owl-prev{
+opacity: 0;
+}
+.card-vacio{
+  width: 300px;
+  height: 400px;
+  box-shadow: 0px 13px 13px  gray;
+  position: absolute;
+  background-color: white;
+  right: 24px;
+  top: 17.5%;
+  padding: 60px;
+  padding-top: 160px;
+}
 

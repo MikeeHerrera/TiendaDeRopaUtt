@@ -5,7 +5,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
-import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -20,11 +21,12 @@ import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
     RouterModule,
     FlexLayoutModule,
     IvyCarouselModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CarouselModule,
   ],
   exports:[
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
 
 })

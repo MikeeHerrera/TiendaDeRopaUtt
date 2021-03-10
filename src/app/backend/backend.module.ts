@@ -13,16 +13,17 @@ import { BackendRoutingModule } from './backend-routing.module';
 
 @NgModule({
   declarations: [
-    BackendComponent, 
-    SidebarComponent, 
-    ContentComponent, 
-    RopaComponent, 
+    BackendComponent,
+    SidebarComponent,
+    ContentComponent,
+    RopaComponent,
     AccesoriosComponent],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    BackendRoutingModule
+    BackendRoutingModule,
+
   ]
 })
 export class BackendModule { }
