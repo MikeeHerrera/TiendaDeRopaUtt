@@ -1,4 +1,4 @@
-<body>
+
   <div class="container-main">
     <div class="container-text">
       <h3>Lorem, ipsum dolor.</h3>
@@ -13,7 +13,7 @@
 
   <div class="container">
     <div class="row">
-      <div *ngFor="let product of twoProducts" class="col-md-4 mb-4">
+      <div *ngFor="let product of twoProducts" class="col-md-4 mb-4" routerLink="product-details/{{ product.id }}">
         <div class="info-clothes">
           <div class="info-img">
             <img src="{{product.data.img}}" alt="">
@@ -30,7 +30,7 @@
           Siente los colores de un tigre Blanco!, ropa para toda ocasión
         </p>
         <div class="clothes-link">
-          <span>Ver más <i class="fas fa-long-arrow-alt-right"></i></span>
+          <span routerLink="/ropa">Ver más <i class="fas fa-long-arrow-alt-right"></i></span>
         </div>
       </div>
       <div class="col-md-4 mb-4" *ngFor="let product2 of products">
@@ -100,4 +100,3 @@
       </owl-carousel-o>
     </div>
   </div>
-</body>

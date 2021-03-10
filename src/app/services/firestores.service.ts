@@ -30,7 +30,7 @@ export class FirestoresService {
     });
   }
 
-  async getProductsByCategory(query: string) {
+  getProductsByCategory(query: string) {
     return new Promise((resolve, reject) => {
       this.firestore
         .collection('products', ref => ref.where('category', '==', query))
@@ -44,6 +44,19 @@ export class FirestoresService {
           }
         );
     });
+  }
+  async getProductById (id:string){
+    return new Promise ((resolve, reject) =>{
+      this.firestore.collection(environment.collection).doc(id).get().subscribe(
+        data =>{
+          const info = data.data()
+          const id = data.id
+          const product = {info, id}
+          resolve(product)
+        }
+      )
+    })
+
   }
   armyArray(data) {
     const products = [];

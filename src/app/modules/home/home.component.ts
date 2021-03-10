@@ -47,13 +47,15 @@ export class HomeComponent implements OnInit {
   async getProducts (){
     this.loader=true;
     this.error= null
-    try{
-      const response = await this.firestoreService.getProducts()
-      this.loader = false;
-      this.firstProducts(response)
-    }catch(err){
-      this.loader= false
-      this.error= err
+    if (!this.products){
+      try{
+        const response = await this.firestoreService.getProducts()
+        this.loader = false;
+        this.firstProducts(response)
+      }catch(err){
+        this.loader= false
+        this.error= err
+      }
     }
   }
   firstProducts(products){

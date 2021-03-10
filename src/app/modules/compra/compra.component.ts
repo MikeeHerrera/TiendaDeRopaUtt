@@ -17,7 +17,9 @@ export class CompraComponent implements OnInit {
     precio: 300,
     img: 'imagen del producto'
   };
-
+  allProducts: any;
+  error: string;
+  loader: boolean;
   //se hace referencia al elemento html
 
   ngOnInit() {
@@ -53,5 +55,21 @@ export class CompraComponent implements OnInit {
       })
       //El render recibe el parametro del ID del div donde queremos generar el botón.
       .render(this.paypalElement.nativeElement);
+      this.getItems()
+  }
+  async getItems(){
+    this.loader = true
+    try {
+      const response = await this.getCart();
+      this.loader= false
+      this.allProducts = response
+    } catch (err) {
+      this.loader= false;
+      this.error = err;
+    }
+  }
+  async getCart() {
+    const carrito = await localStorage.getItem("cartUtt");
+    return JSON.parse(carrito);
   }
 }
