@@ -24,11 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     FlexLayoutModule,
     BackendRoutingModule,
-<<<<<<< HEAD
-
-=======
     ReactiveFormsModule
->>>>>>> 4e6cc99705de3a67613ee9e70fc9d9fd00b19f72
   ]
 })
 export class BackendModule { }

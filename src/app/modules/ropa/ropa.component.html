@@ -9,15 +9,19 @@
     <div class="container-content">
       <div *ngIf="products.length ===0"> No hay productos en esta seccion</div>
       <div class="row">
-        <div class="col-md-4" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: pageActual }">
+        <div class="col-md-4" *ngFor="let product of imgs | paginate: { itemsPerPage: 9, currentPage: pageActual }">
           <div class="info-clothes">
             <div class="info-img">
-              <img src="{{product.data.img}}">
+              <img src="{{product.img}}">
             </div>
-          </div>
-          <div class="info-text">
+            <div class="info-text">
+              <h6>Camisa </h6>
+              <span>$52.00</span>
+            </div>
+            <!-- <div class="info-text">
             <h6>{{product.data.name}} </h6>
             <span>${{product.data.price}}.00</span>
+             </div> -->
           </div>
         </div>
         <pagination-controls (pageChange)="pageActual = $event" class="pagination" previousLabel="" nextLabel="">
@@ -25,4 +29,3 @@
       </div>
     </div>
   </div>
-</div>

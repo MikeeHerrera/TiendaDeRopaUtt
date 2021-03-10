@@ -6,26 +6,21 @@
   margin-bottom: 100px;
 
 }
-
-
-
-.container-clothes{
-  margin-left: 60px;
-}
 .container-clothes h4 {
   color: var(--secondary);
   font-size: 50px;
   font-weight: bold;
 }
 
-.container-content .row{
-  margin: 40px;
+.container-clothes{
+  margin-left:35px;
+  margin-right: 40px;
 }
 .info-clothes{
-  margin-bottom: 20px;
-  /* background-color: red; */
+  margin-bottom: 30px;
   margin-left: 15px;
 }
+
 
 .info-img{
   height: 350px;
@@ -37,7 +32,7 @@
   height: 100%;
   width: 100%;
   object-position: center;
-
+  object-fit: cover;
 }
 
 .info-text {

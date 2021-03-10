@@ -8,8 +8,53 @@ import { FirestoresService } from 'src/app/services/firestores.service';
 })
 export class RopaComponent implements OnInit {
 pageActual=1;
-
+imgs=[
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+  {img :"src=../../../assets/ropa/sudaderanegra.png"},
+]
   constructor(private  fireService: FirestoresService) { }
+  @Input() previousLabel: string = '';
+  @Input() nextLabel: string = '';
 
   products;
   loader: boolean = true

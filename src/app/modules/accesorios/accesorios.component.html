@@ -8,8 +8,8 @@
     <div *ngIf="!loader && !error">
       <h2 class="cont-text">ACCESORIOS</h2>
       <div class="container-content">
-        <div *ngIf="products.length ===0"> No hay productos en esta seccion</div>
-        <div class="row" *ngIf="products.length >0">
+        <!-- <div *ngIf="products.length ===0"> No hay productos en esta seccion</div> -->
+        <div class="row" >
           <div class="col-md-4 " *ngFor="let product of imgs | paginate: { itemsPerPage: 9, currentPage: pageActual }">
             <div class="info-accesories">
               <div class="info-img">
@@ -25,8 +25,7 @@
               </div> -->
             </div>
           </div>
-          <pagination-controls (pageChange)="pageActual = $event" class="pagination" previousLabel="" nextLabel="">
-          </pagination-controls>
+          <pagination-controls (pageChange)="pageActual = $event" class="pagination" previousLabel="" nextLabel=""> </pagination-controls>
         </div>
       </div>
     </div>

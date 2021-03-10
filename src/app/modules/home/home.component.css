@@ -92,11 +92,11 @@
 .container-carousel {
   text-align: center;
   margin-top: 130px;
- margin-bottom: 80px;
  object-fit: contain;
  position: relative;
  margin-top: 170px;
-margin-bottom: 150px;
+margin-bottom: 100px;
+/* background-color: red; */
 
 
 }
