@@ -1,6 +1,6 @@
 <h2 class="titulo">Carrito de compra</h2>
 <div class="container">
-    <div class="row">
+    <div class="row"  *ngIf="!loader && allProducts">
         <table class="tab">
             <thead>
                 <tr>
@@ -12,39 +12,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let product of allProducts">
                     <th>
-                        <img class="img-producto" src="../../../assets/ropa/chinasueterazul.jpg" alt="">
+                        <img class="img-producto" src="{{ product.img }}" alt="">
                     </th>
                     <div class="uniontxt">
                         <td>
-                            <p>Camisa blanca UTT</p><a href="" class="boton-eliminar">Borrar
+                            <p>{{ product.name }}</p><a class="boton-eliminar">Borrar
                     </a></td>
                     </div>
-                    <td class="txt-center"><a class="btn-sumres" href=""> - </a>2
+                    <td class="txt-center"><a class="btn-sumres" href=""> - </a>{{ product.count }}
                         <a class="btn-sumres" href=""> + </a>
                     </td>
-                    <td class="txt-center">$180.00</td>
-                    <td class="txt-center">$360.00</td>
-                </tr>
-                <tr>
-                    <th>
-                        <img class="img-producto" src="../../../assets/ropa/chinasueterazul.jpg" alt="">
-                    </th>
-                    <div class="uniontxt">
-                        <td>
-                            <p>Camisa blanca UTT</p><a href="" class="boton-eliminar">Borrar
-                    </a></td>
-                    </div>
-                    <td class="txt-center"><a class="btn-sumres" href=""> - </a>2
-                        <a class="btn-sumres" href=""> + </a>
-                    </td>
-                    <td class="txt-center">$180.00</td>
-                    <td class="txt-center">$360.00</td>
+                    <td class="txt-center">${{ product.price }}</td>
+                    <td class="txt-center">${{ product.price * product.count }}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <div *ngIf="loader">Cargando...</div>
 </div>
 <h5 class="txt-resumen">Resumen del pedido</h5>
 <div class="txt">

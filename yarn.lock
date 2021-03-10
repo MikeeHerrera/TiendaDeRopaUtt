@@ -127,6 +127,7 @@
   "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-11.1.1.tgz"
   "version" "11.1.1"
   dependencies:
+    "parse5" "^5.0.0"
     "tslib" "^2.0.0"
   optionalDependencies:
     "parse5" "^5.0.0"
@@ -2525,6 +2526,7 @@
     "anymatch" "^2.0.0"
     "async-each" "^1.0.1"
     "braces" "^2.3.2"
+    "fsevents" "^1.2.7"
     "glob-parent" "^3.1.0"
     "inherits" "^2.0.3"
     "is-binary-path" "^1.0.0"
@@ -2543,6 +2545,7 @@
   dependencies:
     "anymatch" "~3.1.1"
     "braces" "~3.0.2"
+    "fsevents" "~2.3.1"
     "glob-parent" "~5.1.0"
     "is-binary-path" "~2.1.0"
     "is-glob" "~4.0.1"
@@ -5622,9 +5625,12 @@
     "clone" "^2.1.2"
     "errno" "^0.1.1"
     "graceful-fs" "^4.1.2"
+    "image-size" "~0.5.0"
     "make-dir" "^2.1.0"
     "mime" "^1.4.1"
+    "promise" "^7.1.1"
     "request" "^2.83.0"
+    "source-map" "~0.6.0"
     "tslib" "^1.10.0"
   optionalDependencies:
     "image-size" "~0.5.0"
@@ -7817,6 +7823,8 @@
   "integrity" "sha512-gfE1455AEazVVTJoeQtcOq/U6GSxwoj4XPSWVsuWmgIxj7sBQNLDOSA82PbdMe+cP8ql8fR1jogPFe8Wg8g4SQ=="
   "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.1.0.tgz"
   "version" "2.1.0"
+  dependencies:
+    "fsevents" "~2.1.2"
   optionalDependencies:
     "fsevents" "~2.1.2"
 
@@ -9235,6 +9243,7 @@
     "chokidar" "^3.4.1"
     "graceful-fs" "^4.1.2"
     "neo-async" "^2.5.0"
+    "watchpack-chokidar2" "^2.0.1"
   optionalDependencies:
     "watchpack-chokidar2" "^2.0.1"
 
