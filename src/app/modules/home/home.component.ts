@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+// import { OwlOptions } from 'ngx-owl-carousel-o';
 import { FirestoresService } from 'src/app/services/firestores.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     navText: ['','Siguiente <i class="fas fa-long-arrow-alt-right"></i>'],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
         items: 2
@@ -48,13 +48,15 @@ export class HomeComponent implements OnInit {
   async getProducts (){
     this.loader=true;
     this.error= null
-    try{
-      const response = await this.firestoreService.getProducts()
-      this.loader = false;
-      this.firstProducts(response)
-    }catch(err){
-      this.loader= false
-      this.error= err
+    if (!this.products){
+      try{
+        const response = await this.firestoreService.getProducts()
+        this.loader = false;
+        this.firstProducts(response)
+      }catch(err){
+        this.loader= false
+        this.error= err
+      }
     }
   }
   firstProducts(products){

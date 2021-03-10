@@ -7,26 +7,100 @@
     </div>
     <div class="add-product ">
         <h2 class="title-forms">Añadir nuevo producto a ROPA</h2>
-        <form action="">
+        <form [formGroup]="newPostForm" *ngIf=" status == true">
             <div class="product-forms">
                 <div class="form-left">
-                    <input type="text" placeholder="Nombre del producto">
-                    <textarea placeholder="Escribe una descripcion"></textarea>
+                    <input type="text" placeholder="Nombre del producto" formControlName="name" id="name" class="form-control">
+                    <textarea placeholder="Escribe una descripcion" formControlName="description" id="description" class="form-control"></textarea>
                 </div>
                 <div class="form-right">
-                    <input type="text" placeholder="Talla">
-                    <input type="number" placeholder="Precio">
-                    <input type="file" id="file" accept="image/*">
+                    <select class="form-select" formControlName="size"  aria-label="Default select example">
+                        <option value="CH">CH</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="XL">XL</option>
+
+
+                      </select>
+                    <!-- <input type="text" placeholder="Talla" formControlName="size" id="size" class="form-control"> -->
+                    <input type="number" placeholder="Precio" formControlName="price" id="price" class="form-control">
+                    <select class="form-select" formControlName="category"  aria-label="Default select example">
+                        <option value="Ropa">Ropa</option>
+                        <option value="Accesorios">Accesorios</option>
+                      </select>
+                    <input type="file" formControlName="img" (change)="handleImage($event)">
                     <div class="image-form-cotainer">
-                        <label for="file">Añadir img</label>
-                        <img class="img-form" src="../../../assets/products-images/photo-1610901119319-f7cc8281869c.jpg"
-                            alt="">
+                        <label class="custom-file">
+                            <input type="file" formControlName="img" (change)="handleImage($event)" />
+                          <p>Seleccionar</p>
+                          </label>   
+    <!-- <img class="img-form" src="image"
+                            alt=""> -->
+                            <!-- <p *ngIf="image">{{image.name}}</p> -->
                     </div>
-                    <button>Añadir producto</button>
+                    <button *ngIf="status == true" type="reset" (click)="addNewPost(newPostForm.value)">Añadir producto</button>
+                    <!-- <button data-toggle="modal" data-target=".bd-example-modal-lg" *ngIf="status == false" type="reset" (click)="editPost(newPostForm.value)">Editar producto</button> -->
+
+                </div>
+            </div>
+        </form>
+
+
+        <form [formGroup]="newPostForm2" *ngIf=" status == false">
+            <div class="product-forms">
+                <div class="form-left">
+                    <input type="text" placeholder="Nombre del producto" formControlName="name" id="name" class="form-control">
+                    <textarea placeholder="Escribe una descripcion" formControlName="description" id="description" class="form-control"></textarea>
+                </div>
+                <div class="form-right">
+                    <select class="form-select"  formControlName="size"  aria-label="Default select example">
+                        <option value="CH">CH</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="XL">XL</option>
+
+
+                      </select>
+                    <!-- <input type="text" placeholder="Talla" formControlName="size" id="size" class="form-control"> -->
+                    <input type="number" placeholder="Precio" formControlName="price" id="price" class="form-control">
+
+                    <select class="form-select" formControlName="category" id="category"  aria-label="Default select example">
+                        <option value="Ropa">Ropa</option>
+                        <option value="Accesorios">Accesorios</option>
+                      </select>
+<div *ngIf="imgstatus == true">
+
+    <img src="{{img}}" alt="">
+    <button (click)=" editarImage(fileRef)">Cambiar imagen</button>
+</div>
+<div  *ngIf="imgstatus == false">
+    <input type="file" formControlName="imagePost" (change)="handleImage($event)">
+
+    <div class="image-form-cotainer">
+        <label class="custom-file">
+            <input type="file" formControlName="imagePost" (change)="handleImage($event)" />
+          <p>Seleccionar</p>
+          </label>   
+    <!-- <img class="img-form" src="image"
+            alt=""> -->
+            <!-- <p *ngIf="image">{{image.name}}</p> -->
+    </div>
+</div>
+
+                    <button  type="reset" (click)="editPost(newPostForm2.value)">Editar producto</button>
+
                 </div>
             </div>
         </form>
     </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            ...
+          </div>
+        </div>
+      </div>
     <div class="product-lists">
         <h2 class="table-title">Productos Actuales de ROPA</h2>
         <table>
@@ -39,33 +113,16 @@
                 <th class="table-edit">Editar</th>
                 <th class="table-delete">Eliminar</th>
             </tr>
-            <tr class="table-product">
-                <td class="table-img"><img src="../../../assets/products-images/photo-1610901119319-f7cc8281869c.jpg" alt=""></td>
-                <td class="table-nombre">Camisa negra</td>
-                <td class="table-precio">$150</td>
-                <td class="table-talla">M</td>
-                <td class="table-descripcion">Lorem ipsum dolor sit amet consectetur adipisicing el...</td>
-                <td class="table-edit"><i class="fas fa-edit"></i></td>
-                <td class="table-delete"><i class="fas fa-trash"></i></td>
+            <tr class="table-product" *ngFor=" let a of dataRopa[0]">
+                <td class="table-img"><img src="{{a.img}}" alt=""></td>
+                <td class="table-nombre">{{a.name}}</td>
+                <td class="table-precio">${{a.price}}</td>
+                <td class="table-talla">{{a.size}}</td>
+                <td class="table-descripcion">{{a.description}}</td>
+                <td class="table-edit"><i (click)="editar(a)" class="fas fa-edit"></i></td>
+                <td class="table-delete" ><i (click)="delete(a.id)" class="fas fa-trash"></i></td>
             </tr>
-            <tr class="table-product">
-                <td class="table-img"><img src="../../../assets/products-images/photo-1610901119319-f7cc8281869c.jpg" alt=""></td>
-                <td class="table-nombre">Camisa negra</td>
-                <td class="table-precio">$150</td>
-                <td class="table-talla">M</td>
-                <td class="table-descripcion">Lorem ipsum dolor sit amet consectetur adipisicing el...</td>
-                <td class="table-edit"><i class="fas fa-edit"></i></td>
-                <td class="table-delete"><i class="fas fa-trash"></i></td>
-            </tr>
-            <tr class="table-product">
-                <td class="table-img"><img src="../../../assets/products-images/photo-1610901119319-f7cc8281869c.jpg" alt=""></td>
-                <td class="table-nombre">Camisa negra</td>
-                <td class="table-precio">$150</td>
-                <td class="table-talla">M</td>
-                <td class="table-descripcion">Lorem ipsum dolor sit amet consectetur adipisicing el...</td>
-                <td class="table-edit"><i class="fas fa-edit"></i></td>
-                <td class="table-delete"><i class="fas fa-trash"></i></td>
-            </tr>
+            
         </table>
     </div>
 </div>

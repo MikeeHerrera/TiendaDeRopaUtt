@@ -16,22 +16,13 @@
             </div>
           </div>
           <div class="info-text">
-              <h6>{{product.data.name}} </h6>
-              <span>${{product.data.price}}.00</span>
-            </div>
+            <h6>{{product.data.name}} </h6>
+            <span>${{product.data.price}}.00</span>
+          </div>
         </div>
-        <!-- <div class="info-clothes">
-            <div class="info-img">
-              <img src="../../../assets/ropa/sudaderanegra.png">
-            </div>
-            <div class="info-text">
-              <h6>Camisa </h6>
-              <span>$52.00</span>
-            </div>
-          </div> -->
+        <pagination-controls (pageChange)="pageActual = $event" class="pagination" previousLabel="" nextLabel="">
+        </pagination-controls>
       </div>
-      <pagination-controls (pageChange)="pageActual = $event" class="pagination" previousLabel="" nextLabel="">
-      </pagination-controls>
     </div>
   </div>
 </div>

@@ -33,7 +33,7 @@ const routes: Routes = [
     component: CompraComponent
   },
   {
-    path: 'product-details',
+    path: 'product-details/:id',
     component: ProductDetailsComponent
   }]
 }, {
