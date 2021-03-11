@@ -6,13 +6,14 @@ import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-
+    SpinnerComponent
 
   ],
   imports: [
@@ -24,7 +25,8 @@ import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
   ],
   exports:[
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SpinnerComponent
   ],
 
 })
