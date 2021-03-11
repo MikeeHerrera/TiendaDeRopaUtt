@@ -157,3 +157,16 @@ opacity: 0;
   padding: 60px;
   padding-top: 160px;
 }
+
+.button-enlace{
+  position: absolute;
+  right: 2%;
+  top: 8%;
+}
+
+.button-enlace button{
+  text-decoration: none;
+  font-size: 40px;
+  color: var(--secondary);
+
+}
