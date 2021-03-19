@@ -38,19 +38,24 @@
           <h2 class="product-info-subTitles">
             Precio: <span class="title">${{ product.info.price }}</span>
           </h2>
-          <div class="">
-            <h2 class="stock"><i class="fas fa-check-circle"></i>Disponible</h2>
-            <h2 class="stock"><i class="fas fa-ban"></i>No disponible</h2>
-          </div>
+          <section class="">
+            <div *ngIf="product.info.stock>0 ">
+              <h2 class="stock"><i class="fas fa-check-circle"></i>Disponible</h2>
+            </div>
+            <div *ngIf="product.info.stock === 0">
+              <h2 class="stock"><i class="fas fa-ban"></i>No disponible</h2>
+            </div>
+          </section>
           <h2 class="product-info-subTitles">
             Cantidad:
             <div class="quantity-content">
-              <button class="quantity">-</button>
-              <div class="quantity-h3">1</div>
-              <button class="quantity">+</button>
+              <button class="quantity" (click)="this.decrementCount()">-</button>
+              <div class="quantity-h3">{{ count }}</div>
+              <button class="quantity" (click)="this.addCount()">+</button>
             </div>
+            <h5>Total: ${{ count*product.info.price }}</h5>
           </h2>
-            <button class="btn product-btn-form product-btn-add" (click)="this.addToCart(product.info, 1, product.id)" [disabled]="isProductNew" >
+            <button class="btn product-btn-form product-btn-add" (click)="this.addToCart(product.info, this.count, product.id)" [disabled]="isProductNew || product.info.stock === 0" >
               Añadir <i class="fas fa-shopping-bag"></i>
             </button>
 
