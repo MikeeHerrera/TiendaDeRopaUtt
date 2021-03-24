@@ -11,7 +11,7 @@ export class ProductDetailsComponent implements OnInit {
   product;
   error;
   loader: boolean;
-  count: number;
+  count: number =1;
   img: string;
   isProductNew: boolean;
 
@@ -41,6 +41,12 @@ export class ProductDetailsComponent implements OnInit {
     this.img = e.target.src
   }
 
+  addCount () {
+    this.count++
+  }
+  decrementCount(){
+    this.count!=1 ? this.count-- : this.count = this.count;
+  }
   async addToCart (product,count, id) {
     const  carrito = await this.getCart();
     const newProduct = {...product, count, id}
@@ -54,7 +60,6 @@ export class ProductDetailsComponent implements OnInit {
       localStorage.setItem('cartUtt', JSON.stringify(newArray))
     }
   }
-
   async isNew(id){
     const cart = await this.getCart()
     const response = cart.some(element => element.id === id);
