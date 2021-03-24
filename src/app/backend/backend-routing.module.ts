@@ -22,8 +22,8 @@ const routes: Routes = [
       {
         path: 'accesorios',
         component: AccesoriosComponent
-      }
-    ] 
+      },
+    ]
   },
 ];
 

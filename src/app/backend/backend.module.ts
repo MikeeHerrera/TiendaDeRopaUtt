@@ -18,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     ContentComponent,
     RopaComponent,
-    AccesoriosComponent],
+    AccesoriosComponent,
+    ],
   imports: [
     CommonModule,
     RouterModule,
