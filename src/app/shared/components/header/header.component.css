@@ -156,3 +156,21 @@
     display: block;
     /* margin-left: 51%; */
 }
+
+.contentResults{
+    margin-top: 10px;
+    height: auto;
+    width: 180px;
+    text-align: left;
+    background: #ffffff;
+    
+    border-radius: 10px;
+    box-shadow: 0px 2px 9px 0px #ccc;
+}
+.searchResults{
+    font-size: 15px;
+    height: 30px;
+    padding: 5px 0px 0px 10px;
+    text-transform: capitalize;
+    outline: none;
+}
