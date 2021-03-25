@@ -4,21 +4,23 @@
   font-size: 40px;
   text-decoration: none;
   margin-bottom: 100px;
+
 }
-.container-accesories h4 {
+.container-clothes h4 {
   color: var(--secondary);
   font-size: 50px;
   font-weight: bold;
 }
 
-.container-accesories{
-margin: 50px;
+.container-clothes{
+  margin-left:35px;
+  margin-right: 40px;
+}
+.info-clothes{
+  margin-bottom: 30px;
+  margin-left: 15px;
 }
 
-.info-accesories{
-  margin-bottom: 50px;
-  width: 380px;
-}
 
 .info-img{
   height: 350px;
@@ -29,7 +31,7 @@ margin: 50px;
 .info-img img {
   height: 100%;
   width: 100%;
-  object-position: center ;
+  object-position: center;
   object-fit: cover;
 }
 
@@ -46,14 +48,15 @@ margin: 50px;
   font-weight: light;
 }
 .pagination /deep/ .ngx-pagination a, .ngx-pagination button{
-color: var(--secondary);
-display: block;
-padding: 0.1875rem 0.625rem;
-border-radius: 0;
-text-decoration: none;
-}
+  color: var(--secondary);
+  display: block;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 0;
+  text-decoration: none;
 
-.pagination /deep/ .ngx-pagination{
+  }
+
+.pagination /deep/ .ngx-pagination {
   text-decoration: none;
   width: 50%;
   display: inline-block;
@@ -65,14 +68,12 @@ text-decoration: none;
   color: var(--secondary);
 }
 
+
 .pagination /deep/ .ngx-pagination .current {
 background-color: white;
 color: var(--primary);
 text-decoration: none;
 }
-
-
-
 
 
 

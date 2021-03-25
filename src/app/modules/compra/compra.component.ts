@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Product } from 'src/app/interface/product';
+import { AuthGeneralService } from 'src/app/services/auth/auth-general.service';
 
 
 declare var paypal;
@@ -13,12 +14,13 @@ declare var paypal;
 export class CompraComponent implements OnInit {
   //para monitorear el elemento html , y poder añadir la pasarela de pago
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
-  constructor() {}
+  constructor(public auth:AuthGeneralService) {}
 
   allProducts: any;
   error: string;
   loader: boolean;
   totalPrice: number;
+  todo=[];
   //se hace referencia al elemento html
 
   ngOnInit() {
@@ -62,6 +64,7 @@ export class CompraComponent implements OnInit {
       const response = await this.getCart();
       this.loader= false
       this.allProducts = response
+      console.log(response)
       this.allProducts.sort(function (a, b) {
         if (a.name > b.name) {
           return 1;
@@ -82,6 +85,7 @@ export class CompraComponent implements OnInit {
     const cart = await this.getCart()
     const reducer =(accumulator, currentValue)=> accumulator+ (currentValue.price * currentValue.count)
     this.totalPrice = cart.reduce(reducer, 0);
+    console.log(this.totalPrice)
   }
   async addCount(id) {
     const cart = await this.getCart();
@@ -111,5 +115,12 @@ export class CompraComponent implements OnInit {
   async getCart() {
     const carrito = await localStorage.getItem("cartUtt");
     return JSON.parse(carrito);
+  }
+
+
+  pagar(){
+    this.todo.push({products:this.allProducts , total:this.totalPrice}, );
+    console.log('carrito'+this.allProducts)
+     this.auth.save(this.todo[0])
   }
 }
