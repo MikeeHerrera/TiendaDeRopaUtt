@@ -5,9 +5,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
-import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import {NgxPaginationModule} from 'ngx-pagination';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,6 +26,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     IvyCarouselModule,
     NgxPaginationModule,
     CarouselModule,
+    FormsModule
   ],
   exports:[
     HeaderComponent,
