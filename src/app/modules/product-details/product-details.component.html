@@ -9,12 +9,7 @@
         <div class="row">
           <div class="col-3">
             <div class="column">
-              <img
-                src="{{ img }}"
-                alt="Nature"
-                class="product-single-img"
-                (click)="this.myFunction($event)"
-              />
+              <img src="{{ img }}" alt="Nature" class="product-single-img" (click)="this.myFunction($event)" />
             </div>
           </div>
           <div class="col-9 product-expand-container-img">
@@ -45,18 +40,19 @@
               <h2 class="stock"><i class="fas fa-ban"></i>No disponible</h2>
             </div>
           </section>
-          <h2 class="product-info-subTitles">
-            Cantidad:
-            <div class="quantity-content">
-              <button class="quantity" (click)="this.decrementCount()">-</button>
-              <div class="quantity-h3">{{ count }}</div>
-              <button class="quantity" (click)="this.addCount()">+</button>
-            </div>
-            <h5>Total: ${{ count*product.info.price }}</h5>
-          </h2>
-            <button class="btn product-btn-form product-btn-add" (click)="this.addToCart(product.info, this.count, product.id)" [disabled]="isProductNew || product.info.stock === 0" >
-              Añadir <i class="fas fa-shopping-bag"></i>
-            </button>
+          <h2 class="product-info-subTitles">Cantidad:</h2>
+
+          <div class="row quantity-content">
+            <button class="quantity" (click)="this.decrementCount()">-</button>
+            <h2 class="quantity-p">{{ count }}</h2>
+            <button class="quantity" (click)="this.addCount()">+</button>
+          </div>
+          <h5>Total: ${{ count*product.info.price }}</h5>
+          <button class="btn product-btn-form product-btn-add"
+            (click)="this.addToCart(product.info, this.count, product.id)"
+            [disabled]="isProductNew || product.info.stock === 0">
+            Añadir <i class="fas fa-shopping-bag"></i>
+          </button>
 
         </div>
       </div>

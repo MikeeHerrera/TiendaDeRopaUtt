@@ -39,7 +39,7 @@ h6 {
     color: red;
     font-weight: 500;
     text-decoration: transparent;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 td {
@@ -51,6 +51,8 @@ td {
 
 .txt-center {
     text-align: center;
+    max-width: 2px;
+    min-width: 1px;
 }
 
 th {
@@ -64,13 +66,13 @@ th {
 .btn-sumres {
     color: rgb(199, 199, 199);
     text-decoration: transparent;
-    margin-left: 3px;
-    margin-right: 3px;
     cursor: pointer;
+    background-color: transparent;
+    border-style: none;
 }
 
 .img-producto {
-    width: 15vw;
+    width: 12vw;
     align-items: "center";
     text-align: center;
 }
@@ -84,7 +86,10 @@ th {
     width: 60px;
 }
 
-.uniontxt {
-    display: block;
-    margin-top: 8.5vw;
+.union {
+    padding-top: 3vw;
+}
+
+.imagen {
+    padding: 0
 }
