@@ -56,7 +56,21 @@ export class FirestoresService {
         }
       )
     })
-
+  }
+  async searchProducts (name: string){
+    return new Promise((resolve, reject) => {
+      this.firestore
+        .collection('products', ref => ref.where('name', '==', name))
+        .get()
+        .subscribe(
+          data => {
+            resolve(this.armyArray(data));
+          },
+          err => {
+            reject('Ocurrio un error');
+          }
+        );
+    });
   }
   armyArray(data) {
     const products = [];
@@ -66,7 +80,6 @@ export class FirestoresService {
         data: hijo.data()
       });
     });
-    console.log(products ||[])
     return products || [];
   }
 }
