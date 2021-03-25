@@ -19,6 +19,7 @@ export class AccesoriosComponent implements OnInit {
   async getProducts(query: string){
     this.loader= true
     this.error = null
+
     try{
       const newQuery = query.toLowerCase()
       const response = await this.fireService.getProductsByCategory(newQuery)
