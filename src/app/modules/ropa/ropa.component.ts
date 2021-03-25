@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FirestoresService } from 'src/app/services/firestores.service';
 
 @Component({
@@ -7,9 +7,11 @@ import { FirestoresService } from 'src/app/services/firestores.service';
   styleUrls: ['./ropa.component.css']
 })
 export class RopaComponent implements OnInit {
-  pageActual= 1;
-
+pageActual=1;
   constructor(private  fireService: FirestoresService) { }
+  @Input() previousLabel: string = '';
+  @Input() nextLabel: string = '';
+
   products;
   loader: boolean = true
   error = null

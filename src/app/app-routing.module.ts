@@ -7,6 +7,10 @@ import { CompraComponent } from './modules/compra/compra.component';
 import { AccesoriosComponent } from './modules/accesorios/accesorios.component';
 import { ProductDetailsComponent } from './modules/product-details/product-details.component';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
+import { DirectionComponent } from './modules/direction/direction.component';
+import { BackendComponent } from './backend/backend.component';
+import { ContentComponent } from './backend/home/content.component';
+
 const routes: Routes = [
 {
   path: '',
@@ -30,7 +34,12 @@ const routes: Routes = [
   {
     path: 'product-details/:id',
     component: ProductDetailsComponent
-  }]
+  },
+  {
+    path: 'direccion',
+    component: DirectionComponent
+  }
+]
 }, {
   path: '',
   loadChildren: () => import('./layouts/fullwidth/fullwidth.module').then(m => m.FullwidthModule)
