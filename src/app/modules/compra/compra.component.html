@@ -4,7 +4,7 @@
         <table class="tab">
             <thead>
                 <tr>
-                    <th scope="row"></th>
+                    <th class="imagen"></th>
                     <th scope="col" class="txt-izquierda">Producto</th>
                     <th scope="col">Cantidad</th>
                     <th scope="col">Precio</th>
@@ -13,16 +13,14 @@
             </thead>
             <tbody>
                 <tr *ngFor="let product of allProducts">
-                    <th scope="row">
+                    <th class="imagen">
                         <img class="img-producto" src="{{ product.img }}" alt="" />
                     </th>
-                    <div class="uniontxt">
-                        <td>
-                            <p>{{ product.name }}</p>
-                            <a class="boton-eliminar" (click)="this.deleteCart(product.id)">Borrar
+                    <td class="union">
+                        <p>{{ product.name }}</p>
+                        <a class="boton-eliminar" (click)="this.deleteCart(product.id)">Borrar
               </a>
-                        </td>
-                    </div>
+                    </td>
                     <td class="txt-center">
                         <button class="btn-sumres" (click)="decrementCount(product.id)" [disabled]="this.product.count === 1"> - </button>{{ product.count }}
                         <button class="btn-sumres" (click)="this.addCount(product.id)" [disabled]="this.product.stock <= this.product.count"> + </button>
