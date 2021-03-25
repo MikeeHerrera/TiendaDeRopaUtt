@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+<div class="containerone" style="height: 150px;">
+
+</div>
+<div class="container-clothes">
+  <div *ngIf="loader">Cargando....</div>
+  <div *ngIf="error"> Ocurrió un error intente mas tarde</div>
+  <div *ngIf="!loader && !error">
+    <h2 class="cont-text">ROPA</h2>
+    <div class="container-content">
+      <div *ngIf="products.length ===0"> No hay productos en esta seccion</div>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: pageActual }">
+          <div class="info-clothes" routerLink="/product-details/{{ product.id }}">
+            <div class="info-img">
+              <img src="{{product.data.img}}">
+            </div>
+            <div class="info-text">
+            <h6>{{product.data.name}} </h6>
+            <span>${{product.data.price}}.00</span>
+             </div>
+          </div>
+        </div>
+        <pagination-controls (pageChange)="pageActual = $event" class="pagination" previousLabel="" nextLabel="">
+        </pagination-controls>
+      </div>
+    </div>
+  </div>
+=======
 <body>
     <div class="containerone" style="height: 150px;">
 
@@ -42,3 +71,4 @@
     </div>
 
 </body>
+>>>>>>> 1ed6ee3a794c969cefaf3bd6be27d45285a0ff2d

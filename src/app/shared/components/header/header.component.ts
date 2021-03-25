@@ -35,8 +35,10 @@ export class HeaderComponent implements OnInit {
     const nameCamelCase = name.toLowerCase()
     try {
       const response = await this.fire.searchProducts(nameCamelCase)
-        response.map(item => this.resultSearch.push(item))
+      this.resultSearch.push(response)
+        // response.map(item => this.resultSearch.push(item))
         console.log(this.resultSearch)
+
 
     } catch (err) {
       console.error('Ocurrió un error')

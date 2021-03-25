@@ -62,7 +62,7 @@ export class AuthGeneralService {
     //   // return this.postsCollection.doc(post.id).update(postObj);
     // } else {
     //     }
-   
+
     return new Promise<any>((resolve, reject) =>{
       this.firestore
           .collection("products")
@@ -89,12 +89,12 @@ export class AuthGeneralService {
 
   //eliminar alguna ropa
 
-  deleteRopa (id) { 
- 
-        this.firestore 
-        .collection ("products") 
-        .doc (id) 
-        .delete (); 
+  deleteRopa (id) {
+
+        this.firestore
+        .collection ("products")
+        .doc (id)
+        .delete ();
  }
 
 
@@ -111,4 +111,17 @@ this.firestore.collection("products").doc(post.id).update(post)
 deleteImage(event){
   this.storage.ref(event).delete();
 }
+
+
+
+ save(data) {
+
+  return new Promise<any>((resolve, reject) =>{
+    this.firestore
+        .collection("pedidos")
+        .add(data)
+        .then(res => {}, err => reject(err));
+});
+}
+
 }

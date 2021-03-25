@@ -10,40 +10,46 @@ import { FirestoresService } from 'src/app/services/firestores.service';
 export class HomeComponent implements OnInit {
   customOptions: OwlOptions  = {
     loop: true,
-    margin:10,
-    items:3,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag:true,
+    touchDrag: true,
     pullDrag: false,
     dots: false,
-    startPosition: 1,
     navSpeed: 700,
-    navText: ['','Siguiente <i class="fas fa-long-arrow-alt-right"></i>'],
+    navText: ['', ''],
     responsive: {
       0: {
-        items: 1,
+        items: 1
       },
       400: {
         items: 2
       },
       740: {
         items: 3
+      },
+      940: {
+        items: 4
       }
     },
     nav: true
+
   }
 
 
 
   constructor(private firestoreService: FirestoresService) { }
   products;
+  products2;
+  products3;
+
   twoProducts=[]
   error =null;
   loader: boolean = true;
 
 
   ngOnInit(){
-    this.getProducts();
+    // this.getProducts();
+    this.accesories();
+    this.ropa();
   }
   async getProducts (){
     this.loader=true;
@@ -70,6 +76,25 @@ export class HomeComponent implements OnInit {
       return productsNew.id != id1 && productsNew.id != id2
     })
     this.products = result;
+  }
+
+  async accesories(){
+    this.products2 = [];
+    const data =
+    await  this.firestoreService.getProductsByCategory('accesorios');
+     this.products2 = data;
+     console.log(this.products2 );
+
+  }
+
+
+  async ropa(){
+    this.products3 = [];
+    const data =
+    await  this.firestoreService.getProductsByCategory('ropa');
+     this.products3 = data;
+     console.log(this.products3 );
+
   }
 }
 

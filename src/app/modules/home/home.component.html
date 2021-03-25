@@ -13,7 +13,7 @@
 
   <div class="container">
     <div class="row">
-      <div *ngFor="let product of twoProducts" class="col-md-4 mb-4" routerLink="product-details/{{ product.id }}">
+      <!-- <div *ngFor="let product of products3" class="col-md-4 mb-4" routerLink="product-details/{{ product.id }}">
         <div class="info-clothes">
           <div class="info-img">
             <img src="{{product.data.img}}" alt="">
@@ -23,6 +23,22 @@
             <span>{{product.data.price}}.00</span>
           </div>
         </div>
+      </div> -->
+      <div class="carousel-content " class="col-8 clothes-more">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let a of products3">
+            <div class="card"   routerLink="product-details/{{ a.id }}">
+              <div class="info-img">
+                <img class="image" src="{{a.data.img}}">
+
+              </div>
+              <div class="info-text">
+                <h3>{{a.data.name}}</h3>
+                <h3>$400.00</h3>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
       </div>
       <div class="col-4 clothes-more">
         <h4>Ropa</h4>
@@ -33,7 +49,7 @@
           <span routerLink="/ropa">Ver más <i class="fas fa-long-arrow-alt-right"></i></span>
         </div>
       </div>
-      <div class="col-md-4 mb-4" *ngFor="let product2 of products">
+      <!-- <div class="col-md-4 mb-4" *ngFor="let product2 of products">
         <div class="info-clothes">
           <div class="info-img">
             <img src="{{product2.data.img}}" alt="">
@@ -43,7 +59,7 @@
             <span>{{product2.data.price}}.00</span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="container-carousel">
@@ -55,54 +71,20 @@
     </div>
     <div class="carousel-content ">
       <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide>
-          <div class="card">
-            <img src="../../../assets/accesorios/libreta.jpg">
-            <div class="info-text">
-              <h6>Sudadera negra</h6>
-              <span>$400.00</span>
+        <ng-template carouselSlide *ngFor="let a of products2">
+          <div class="card"   routerLink="product-details/{{ a.id }}">
+            <div class="info-img">
+              <img class="image" src="{{a.data.img}}">
+
             </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="card">
-            <img src="../../../assets/accesorios/taza.jpg">
             <div class="info-text">
-              <h6>Sudadera negra</h6>
-              <span>$400.00</span>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="card">
-            <img src="../../../assets/accesorios/baso.jpg">
-            <div class="info-text">
-              <h6>Sudadera negra</h6>
-              <span>$400.00</span>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="card">
-            <img src="../../../assets/accesorios/bolsa.jpg">
-            <div class="info-text">
-              <h6>Sudadera negra</h6>
-              <span>$400.00</span>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="card">
-            <img src="../../../assets/accesorios/taza.jpg">
-            <div class="info-text">
-              <h6>Sudadera negra</h6>
-              <span>$400.00</span>
+              <h3>{{a.data.name}}</h3>
+              <h3>$400.00</h3>
             </div>
           </div>
         </ng-template>
       </owl-carousel-o>
     </div>
-    <div class="card-vacio">
-    </div>
+
   </div>
 </body>
