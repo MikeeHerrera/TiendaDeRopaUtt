@@ -51,7 +51,8 @@ export class ProductDetailsComponent implements OnInit {
     const  carrito = await this.getCart();
     const newProduct = {...product, count, id}
     let newArray = [];
-    if(carrito === 'null'){
+    if(JSON.stringify(carrito) === 'null'){
+      console.log('Entre Aqui')
       newArray.push(newProduct);
       localStorage.setItem('cartUtt', JSON.stringify(newArray))
     }else {
@@ -62,8 +63,12 @@ export class ProductDetailsComponent implements OnInit {
   }
   async isNew(id){
     const cart = await this.getCart()
-    const response = cart.some(element => element.id === id);
+    if(JSON.stringify(cart) === 'null'){
+      this.isProductNew = false
+    }else{
+      const response = cart.some(element => element.id === id);
     this.isProductNew = response
+    }
   }
 
   async getCart() {
