@@ -14,11 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    BackendComponent, 
-    SidebarComponent, 
-    ContentComponent, 
-    RopaComponent, 
-    AccesoriosComponent],
+    BackendComponent,
+    SidebarComponent,
+    ContentComponent,
+    RopaComponent,
+    AccesoriosComponent,
+    ],
   imports: [
     CommonModule,
     RouterModule,

@@ -52,7 +52,6 @@ export class ProductDetailsComponent implements OnInit {
     const newProduct = {...product, count, id}
     let newArray = [];
     if(JSON.stringify(carrito) === 'null'){
-      console.log('Entre Aqui')
       newArray.push(newProduct);
       localStorage.setItem('cartUtt', JSON.stringify(newArray))
     }else {
@@ -67,7 +66,7 @@ export class ProductDetailsComponent implements OnInit {
       this.isProductNew = false
     }else{
       const response = cart.some(element => element.id === id);
-    this.isProductNew = response
+      this.isProductNew = response
     }
   }
 

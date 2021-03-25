@@ -16,7 +16,10 @@
       </div>
 
       <div class="navbar-profile-input">
-        <input type="text" placeholder="Buscar">
+        <input type="text" [(ngModel)]='textoDeInput' (ngModelChange)="searchingProducts(textoDeInput)" name="textoDeInput"  placeholder="Buscar">
+        <div *ngFor="let searchProduct of resultSearch">
+          <h1 routerLink="/product-details/{{ searchProduct.id }}">{{ searchProduct.data.name }}</h1>
+        </div>
       </div>
     </div>
 
@@ -28,20 +31,20 @@
     <img class="navbar-profie-img" routerLink="/login" src="https://picsum.photos/200/300?random=3" alt="">
     <!-- <button *ngIf="isLogged" (click)="logout()">Logout</button> -->
     <div class="usuario" *ngIf="(isLogged && auth.email)">
-    <div class="dropdown">
-      <button class="dropbtn">
+      <div class="dropdown">
+        <button class="dropbtn">
 
 
-        <p> {{auth.email}} </p></button>
+          <p> {{auth.email}} </p></button>
 
-      <div class="dropdown-content">
-        <a class="dropdown-content--button" *ngIf="isLogged" (click)="logout()">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+          <div class="dropdown-content">
+            <a class="dropdown-content--button" *ngIf="isLogged" (click)="logout()">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
 
+          </div>
+        </div>
       </div>
+
     </div>
-  </div>
 
-  </div>
-
-</nav>
+  </nav>
 

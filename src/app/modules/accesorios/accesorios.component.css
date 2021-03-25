@@ -11,15 +11,26 @@
   font-weight: bold;
 }
 
+.container-accesories{
+margin: 50px;
+}
+
 .info-accesories{
-  margin-bottom: 15px;
+  margin-bottom: 50px;
+  width: 380px;
+}
+
+.info-img{
+  height: 350px;
+  width: 100%;
+  /* background-color:crimson ; */
 }
 
 .info-img img {
-  height: 300px;
+  height: 100%;
   width: 100%;
-  object-position: center;
-  object-fit: contain;
+  object-position: center ;
+  object-fit: cover;
 }
 
 .info-text {
