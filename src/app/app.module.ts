@@ -12,9 +12,13 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import { AuthorizationService } from './services/auth/authorization.service';
 import { BackendModule } from './backend/backend.module';
+import { DirectionComponent } from './modules/direction/direction.component';
+import { FormsModule, } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
+    DirectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,7 @@ import { BackendModule } from './backend/backend.module';
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    FormsModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

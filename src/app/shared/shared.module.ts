@@ -7,6 +7,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     RouterModule,
     FlexLayoutModule,
     IvyCarouselModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CarouselModule,
   ],
   exports:[
     HeaderComponent,
