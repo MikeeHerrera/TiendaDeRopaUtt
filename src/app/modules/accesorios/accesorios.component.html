@@ -1,4 +1,5 @@
-<div class="containerone" style="height: 150px;">
+<body>
+  <div class="containerone" style="height: 150px;">
 
   </div>
   <div class="container-accesories">
@@ -18,9 +19,9 @@
               <span>${{product.data.price}}.00</span>
             </div>
           </div>
+          <pagination-controls (pageChange)="pageActual = $event" class="pagination" previousLabel="" nextLabel=""> </pagination-controls>
         </div>
-        <pagination-controls (pageChange)="pageActual = $event" class="pagination"></pagination-controls>
-       </div>
+      </div>
     </div>
   </div>
-
+</body>
