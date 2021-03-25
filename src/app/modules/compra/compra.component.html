@@ -1,46 +1,46 @@
 <h2 class="titulo">Carrito de compra</h2>
 <div class="container">
-  <div class="row" *ngIf="!loader && allProducts && allProducts != 0">
-    <table class="tab">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col" class="txt-izquierda">Producto</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Precio</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of allProducts">
-          <th>
-            <img class="img-producto" src="{{ product.img }}" alt="" />
-          </th>
-          <div class="uniontxt">
-            <td>
-              <p>{{ product.name }}</p>
-              <a class="boton-eliminar" (click)="this.deleteCart(product.id)"
-                >Borrar
+    <div class="row" *ngIf="!loader && allProducts && allProducts != 0">
+        <table class="tab">
+            <thead>
+                <tr>
+                    <th scope="row"></th>
+                    <th scope="col" class="txt-izquierda">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of allProducts">
+                    <th scope="row">
+                        <img class="img-producto" src="{{ product.img }}" alt="" />
+                    </th>
+                    <div class="uniontxt">
+                        <td>
+                            <p>{{ product.name }}</p>
+                            <a class="boton-eliminar" (click)="this.deleteCart(product.id)">Borrar
               </a>
-            </td>
-          </div>
-          <td class="txt-center">
-            <button class="btn-sumres" (click) ="decrementCount(product.id)" [disabled]="this.product.count === 1" > - </button>{{ product.count }}
-            <button class="btn-sumres" (click) ="this.addCount(product.id)" [disabled]="this.product.stock <= this.product.count"> + </button>
-          </td>
-          <td class="txt-center">${{ product.price }}</td>
-          <td class="txt-center">${{ product.price * product.count }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div *ngIf="loader">Cargando...</div>
+                        </td>
+                    </div>
+                    <td class="txt-center">
+                        <button class="btn-sumres" (click)="decrementCount(product.id)" [disabled]="this.product.count === 1"> - </button>{{ product.count }}
+                        <button class="btn-sumres" (click)="this.addCount(product.id)" [disabled]="this.product.stock <= this.product.count"> + </button>
+                    </td>
+                    <td class="txt-center">${{ product.price }}</td>
+                    <td class="txt-center">${{ product.price * product.count }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="loader">Cargando...</div>
 </div>
 <div *ngIf="allProducts?.length === 0">No tienes nada en tu Carrito</div>
 <h5 class="txt-resumen">Resumen del pedido</h5>
 <div class="txt">
-  <h6>Subtotal:</h6>
-  <h6 class="colortxt">${{ this.totalPrice }}</h6>
+    <h6>Subtotal:</h6>
+    <h6 class="colortxt">${{ this.totalPrice }}</h6>
 
-  <div #paypal></div>
+    <div #paypal></div>
 </div>

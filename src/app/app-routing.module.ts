@@ -2,16 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { HomeComponent } from './modules/home/home.component';
-import { LoginComponent } from './modules/login/login.component';
 import { RopaComponent } from './modules/ropa/ropa.component';
 import { CompraComponent } from './modules/compra/compra.component';
 import { AccesoriosComponent } from './modules/accesorios/accesorios.component';
 import { ProductDetailsComponent } from './modules/product-details/product-details.component';
-import { FullwidthComponent } from './layouts/fullwidth/fullwidth.component';
-import { RegisterComponent } from './modules/register/register.component';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
-import { BackendComponent } from './backend/backend.component';
-import { ContentComponent } from './backend/home/content.component';
 const routes: Routes = [
 {
   path: '',
