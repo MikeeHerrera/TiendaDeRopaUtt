@@ -72,7 +72,7 @@ th {
 }
 
 .img-producto {
-    width: 15vw;
+    width: 12vw;
     align-items: "center";
     text-align: center;
 }
@@ -86,7 +86,10 @@ th {
     width: 60px;
 }
 
-.uniontxt {
-    display: block;
-    margin-top: 5vw;
+.union {
+    padding-top: 3vw;
+}
+
+.imagen {
+    padding: 0
 }
