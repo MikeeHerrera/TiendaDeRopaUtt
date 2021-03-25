@@ -78,9 +78,10 @@
 
   .form-container{
     background-color: white;
-    position: absolute;
-    left: 15%;
-    top: 108%;
+    position:  relative;
+    /* left: 15%;
+    top: 108%; */
+    margin-top: 180px;
     width: 420px;
     height: auto;
     padding-left: 15px ;

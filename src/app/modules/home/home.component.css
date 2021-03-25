@@ -25,6 +25,7 @@
   color: var(--primary);
   font-weight: bold;
   margin-bottom: 40px;
+  font-size: 50px;
 }
 .container-img {
   height: 600px;
