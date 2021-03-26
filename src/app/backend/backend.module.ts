@@ -9,6 +9,7 @@ import { AccesoriosComponent } from './accesorios/accesorios.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BackendRoutingModule } from './backend-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrdersComponent } from './orders/orders.component';
 
 
 
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContentComponent,
     RopaComponent,
     AccesoriosComponent,
+    OrdersComponent,
     ],
   imports: [
     CommonModule,

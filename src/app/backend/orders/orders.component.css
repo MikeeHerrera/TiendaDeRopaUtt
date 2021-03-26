@@ -1,0 +1,45 @@
+.home-header-user{
+    font-size: 25px;
+}
+
+table{
+    margin-top: 35px;
+    height: auto;
+    text-align: center;
+    border: 1px solid var(--secondary);
+}
+
+.table-header{
+    background: var(--secondary);
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.table-product{
+    font-size: 14px;
+}
+
+td, th{
+    border: 1px solid var(--secondary);
+}
+
+.table-noPedido{
+    width: 6%;
+}
+
+.table-nombre{
+    width: 18%;
+}
+
+.table-direccion{
+    width: 25%;
+}
+
+.table-telefono{
+    width: 8%;
+    font-size: 12px;
+}
+
+.table-productos{
+    width: 35%;
+}
