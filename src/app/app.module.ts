@@ -31,7 +31,8 @@ import { FormsModule, } from '@angular/forms';
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthorizationService],
   bootstrap: [AppComponent]

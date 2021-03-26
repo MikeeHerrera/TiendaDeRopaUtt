@@ -16,15 +16,19 @@ export class AuthorizationService {
   redirectUrl: string;
   userName:any;
  email:any;
-
+uid:any;
   constructor(private afAuth: AngularFireAuth , private router: Router) {
     this.afAuth.authState.subscribe((user) => {
       if (user) {
         this.isLoggedIn = true;
         this.user = user;
+        this.userName = user.displayName;
+        this.uid = user.uid
+        localStorage.setItem('name', this.userName);
+        localStorage.setItem('id', this.uid);
+
         localStorage.setItem('user', JSON.stringify(this.user));
 
-        this.userName = user.displayName;
    this.email= user.email;
         this.cargarData();
       } else {

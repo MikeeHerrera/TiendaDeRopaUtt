@@ -6,6 +6,7 @@ import { Post } from '../../models/post';
 
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Product } from 'src/app/interface/product';
+import { AuthorizationService } from './authorization.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +19,7 @@ export class AuthGeneralService {
   private downloadURL: Observable<string>;
   constructor(    private storage: AngularFireStorage,
     private firestore: AngularFirestore
+    , private auth:AuthorizationService
     ) { }
 
   public preAddAndUpdatePost(post:Product, image): void {
@@ -117,11 +119,36 @@ deleteImage(event){
  save(data) {
 
   return new Promise<any>((resolve, reject) =>{
-    this.firestore
-        .collection("pedidos")
-        .add(data)
+    this.firestore.collection('pedidos').doc(this.date).set
+  (data)
         .then(res => {}, err => reject(err));
 });
+}
+
+
+saveName(data, usuario) {
+
+  return new Promise<any>((resolve, reject) =>{
+    this.firestore
+        .collection('usuarios').doc(usuario).set(data)
+
+        .then(res => {}, err => reject(err));
+});
+}
+
+//datos del usuario
+datos(){
+  return this.firestore.collection("usuarios")
+  .snapshotChanges()
+  .pipe(
+    map(actions =>
+      actions.map(a => {
+        const data = a.payload.doc.data() as Post;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      })
+    )
+  );
 }
 
 }

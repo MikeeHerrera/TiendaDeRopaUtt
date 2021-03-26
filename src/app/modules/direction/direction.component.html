@@ -3,63 +3,63 @@
     <div class="direction-container">
       <h4 class="direction-title">Direcciones de envio</h4>
       <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <h5 class="card-title"><span>Karen Michel Sixto Lázaro</span></h5>
+        <div class="card-body" *ngFor="let a of direccion">
+          <h5 class="card-title"><span>{{a.nombre}}</span></h5>
           <p class="card-text">Telefono: 6465654894</p>
-          <p class="card-text">Carmen Serdan Col. Guadalupe, San Pablo Tepetzingo, 75859, Tehuacan, Puebla, México</p>
-          <p class="card-text">Referencia : Casa verde de 2 pisos </p>
+          <p class="card-text">{{a.calle}}, {{a.numeroE}} , {{a.ciudad}} , {{a.colonia}}</p>
+          <p class="card-text">Referencia : {{a.referencia}} </p>
         </div>
       </div>
-      <button type="button" class="new-direction">Agregar nueva dirección</button>
+      <button type="button" class="new-direction">Agregar dirección</button>
     </div>
     <div class="newDirection-container">
       <h4 class="direction-title">Direcciones de envio</h4>
       <div class="form-container">
         <h5 class="form-title">Agregar nueva dirección </h5>
         <div class="forms-body">
-          <form>
+          <form [formGroup]="newPostForm">
             <fieldset disabled>
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
-                <input type="text" id="name" class="form-control" placeholder="Karen Michel Sixto Lazaro">
+                <input formControlName="nombre" id="nombre"  type="text" id="name" class="form-control" >
               </div>
             </fieldset>
             <div class="form-row">
             </div>
             <div class="form-group">
               <label for="address">Calle</label>
-              <input type="text" class="form-control" id="address">
+              <input formControlName="calle" id="calle"  type="text" class="form-control" id="address">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="suburb">Colonia</label>
-                <input type="text" class="form-control" id="suburb">
+                <input formControlName="colonia" id="colonia"  type="text" class="form-control" id="suburb">
               </div>
               <div class="form-group col-md-3">
                 <label for="numExt">N. Exterior</label>
-                <input type="number" class="form-control" id="numExt">
+                <input formControlName="numeroE" id="numeroE"  type="number" class="form-control" id="numExt">
               </div>
               <div class="form-group col-md-3">
                 <label for="numInt">N. Interior</label>
-                <input type="number" class="form-control" id="numInt">
+                <input formControlName="numeroI" id="numeroI"  type="number" class="form-control" id="numInt">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="city">Ciudad</label>
-                <input type="text" class="form-control" id="city">
+                <input formControlName="ciudad" id="ciudad"  type="text" class="form-control" id="city">
               </div>
               <div class="form-group col-md-6">
                 <label for="zip">Codigo Postal</label>
-                <input type="number" class="form-control" id="zip">
+                <input  formControlName="cp" id="cp"  type="number" class="form-control" id="zip">
               </div>
 
             </div>
             <div class="form-group">
               <label for="reference">Referencia</label>
-              <input type="text" class="form-control" id="reference">
+              <input formControlName="referencia" id="referencia"  type="text" class="form-control" id="reference">
             </div>
-            <button type="submit" class="save">Guardar</button>
+            <button (click)="addDirection(newPostForm.value)" type="submit" class="save">Guardar</button>
           </form>
 
         </div>

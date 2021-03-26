@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   public user: any;
   textoDeInput: string = null
   resultSearch = [];
+  data=[];
   constructor(
     public auth: AuthorizationService,
     private router: Router,
@@ -34,10 +35,10 @@ export class HeaderComponent implements OnInit {
   async searchingProducts(name){
     const nameCamelCase = name.toLowerCase()
     try {
-      const response = await this.fire.searchProducts(nameCamelCase)
-      this.resultSearch.push(response)
-        // response.map(item => this.resultSearch.push(item))
-        console.log(this.resultSearch)
+     this.data.push( await this.fire.searchProducts(nameCamelCase))
+      // this.resultSearch.push(response)
+       this.data.map(item => this.resultSearch.push(item ))
+        console.log(this.data)
 
 
     } catch (err) {

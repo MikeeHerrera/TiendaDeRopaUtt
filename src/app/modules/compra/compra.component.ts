@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Product } from 'src/app/interface/product';
 import { AuthGeneralService } from 'src/app/services/auth/auth-general.service';
+import { AuthorizationService } from 'src/app/services/auth/authorization.service';
 
 
 declare var paypal;
@@ -14,8 +15,8 @@ declare var paypal;
 export class CompraComponent implements OnInit {
   //para monitorear el elemento html , y poder añadir la pasarela de pago
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
-  constructor(public auth:AuthGeneralService) {}
-
+  constructor(public auth:AuthGeneralService , private AuthS : AuthorizationService) {}
+direccion:any =[];
   allProducts: any;
   error: string;
   loader: boolean;
@@ -24,6 +25,7 @@ export class CompraComponent implements OnInit {
   //se hace referencia al elemento html
 
   ngOnInit() {
+    this.datas();
     paypal
       .Buttons({
         //creando la orden
@@ -119,8 +121,18 @@ export class CompraComponent implements OnInit {
 
 
   pagar(){
-    this.todo.push({products:this.allProducts , total:this.totalPrice}, );
+    this.todo.push({products:this.allProducts , total:this.totalPrice ,
+     envio: this.direccion , uid:this.AuthS.uid} );
     console.log('carrito'+this.allProducts)
      this.auth.save(this.todo[0])
+  }
+
+  datas(){
+    this.auth.datos().subscribe(data=>{
+      this.direccion = [];
+      this.direccion.push(data[0]);
+      console.log(this.direccion)
+
+    })
   }
 }
