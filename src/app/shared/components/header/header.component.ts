@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FirestoresService } from 'src/app/services/firestores.service';
 import { AuthorizationService } from './../../../services/auth/authorization.service';
 
 
@@ -13,36 +12,20 @@ import { AuthorizationService } from './../../../services/auth/authorization.ser
 export class HeaderComponent implements OnInit {
   public isLogged = false;
   public user: any;
-  textoDeInput: string = null
-  resultSearch = [];
-  data=[];
   constructor(
     public auth: AuthorizationService,
-    private router: Router,
-    private fire : FirestoresService
+    private router: Router
   ) {
 
   }
-
 
   async ngOnInit() {
     console.log('nav ');
     this.user = await this.auth.hasUser();
     if (this.user) {
       this.isLogged = true;
-    }
-  }
-  async searchingProducts(name){
-    const nameCamelCase = name.toLowerCase()
-    try {
-     this.data.push( await this.fire.searchProducts(nameCamelCase))
-      // this.resultSearch.push(response)
-       this.data.map(item => this.resultSearch.push(item ))
-        console.log(this.data)
 
 
-    } catch (err) {
-      console.error('Ocurrió un error')
     }
   }
 
