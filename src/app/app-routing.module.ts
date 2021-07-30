@@ -10,6 +10,8 @@ import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.c
 import { DirectionComponent } from './modules/direction/direction.component';
 import { BackendComponent } from './backend/backend.component';
 import { ContentComponent } from './backend/home/content.component';
+import { PedidosUsuarioComponent } from './modules/pedidos-usuario/pedidos-usuario.component';
+import { PedidosUDescriptionComponent } from './modules/pedidos-udescription/pedidos-udescription.component';
 
 const routes: Routes = [
 {
@@ -39,6 +41,14 @@ const routes: Routes = [
   {
     path: 'direccion',
     component: DirectionComponent
+  },
+  {
+    path: 'pedidosU',
+    component:PedidosUsuarioComponent
+  },
+  {
+    path: 'pedidosDescription/:id',
+    component:PedidosUDescriptionComponent
   }
 ]
 }, {

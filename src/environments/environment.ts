@@ -12,7 +12,8 @@ export const environment = {
     messagingSenderId: "942854942057",
     appId: "1:942854942057:web:c7cb1a0ef36a1d536921f8"
   },
-  collection: 'products'
+  collection: 'products',
+  collection2:'pedidos'
 };
 
 /*

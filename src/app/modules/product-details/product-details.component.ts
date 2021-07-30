@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoresService } from 'src/app/services/firestores.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import swal from'sweetalert2';
+import { title } from 'process';
 
 @Component({
   selector: 'app-product-details',
@@ -10,12 +12,15 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailsComponent implements OnInit {
   product;
   error;
+  titularAlerta :string;
   loader: boolean;
   count: number =1;
   img: string;
   isProductNew: boolean;
 
-  constructor(private fire : FirestoresService, private route: ActivatedRoute) {}
+  constructor(private fire : FirestoresService, private route: ActivatedRoute,
+    private Router:Router
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params =>{
@@ -53,11 +58,19 @@ export class ProductDetailsComponent implements OnInit {
     let newArray = [];
     if(JSON.stringify(carrito) === 'null'){
       newArray.push(newProduct);
-      localStorage.setItem('cartUtt', JSON.stringify(newArray))
+      localStorage.setItem('cartUtt', JSON.stringify(newArray));
+      // swal.fire({ title: 'Save file as...', input: 'text', showDenyButton: true, denyButtonText: 'Don\'t save', showCancelButton: true });
+      // alert('Producto enviado al carrito')
+      // this.Router.navigate(['./'])
+      console.log('enviado')
     }else {
       carrito.map(element => newArray.push(element));
       newArray.push(newProduct);
       localStorage.setItem('cartUtt', JSON.stringify(newArray))
+      console.log('enviado')
+      swal.fire('Enviado al carrito...', this.titularAlerta, 'success');
+       this.Router.navigate(['./'])
+
     }
   }
   async isNew(id){

@@ -1,15 +1,18 @@
 import { Product } from './../interface/product';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.prod';
+import { AuthorizationService } from './auth/authorization.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirestoresService {
-  constructor(private firestore: AngularFirestore) {}
+  pedidos:any =[]=[]
+  constructor(private firestore: AngularFirestore ,private authS: AuthorizationService) {}
 
   refDB = this.firestore.collection(environment.collection);
+  refDB2 = this.firestore.collection(environment.collection2);
 
 
   sendProduct(product: Product) {
@@ -82,4 +85,51 @@ export class FirestoresService {
     });
     return products || [];
   }
+
+
+  async pedidosUID(){
+  const id =  localStorage.getItem('id')
+    console.log(id)
+    return new Promise((resolve, reject) => {
+      this.firestore
+        .collection('pedidos', ref => ref.where('uid', '==',id))
+        .get().toPromise().then(data=>{
+          this.pedidos = [];
+
+          resolve(this.armyArray(data).find(data=>{
+            console.log(data)
+            this.pedidos.push(data)
+          }))
+          console.log(this.pedidos)
+        })
+    });
+  }
+
+
+  async getPedidosU (id){
+    return new Promise ((resolve, reject) =>{
+      this.firestore.collection('pedidos').doc(id).get().subscribe(
+        data =>{
+          const info = data.data()
+          const id = data.id
+          const product = {info, id}
+          resolve(product)
+        }
+      )
+    })
+  }
+  getPedidosAdmin() {
+    return new Promise((resolve, reject) => {
+      this.refDB2.get().subscribe(
+        data => {
+          resolve(this.armyArray(data));
+        },
+        err => {
+          reject('Ocurrio un error');
+        }
+      );
+    });
+  }
 }
+
+

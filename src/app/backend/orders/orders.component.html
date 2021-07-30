@@ -10,33 +10,22 @@
                 <th class="table-noPedido">No. Pedido</th>
                 <th class="table-nombre">Nombre del usuario</th>
                 <th class="table-direccion">Direccion</th>
-                <th class="table-telefono">Telefono</th>
+                <!-- <th class="table-telefono">Telefono</th> -->
                 <th class="table-productos">Productos</th>
                 <th class="table-total">Total</th>
             </tr>
-            <tr class="table-product">
-                <td class="table-noPedido">1</td>
-                <td class="table-nombre">Chivo Dios</td>
-                <td class="table-direccion">Calle del olimpo #777 Col. Los dioses</td>
-                <td class="table-telefono">2381234567</td>
-                <td class="table-productos">Camisa negra, gorra roja</td>
-                <td class="table-total">$150000</td>
-            </tr>
-            <tr class="table-product">
-                <td class="table-noPedido">2</td>
-                <td class="table-nombre">Chivo Dios</td>
-                <td class="table-direccion">Calle del olimpo #777 Col. Los dioses</td>
-                <td class="table-telefono">2381234567</td>
-                <td class="table-productos">Camisa negra, gorra roja Camisa negra, gorra roja Camisa negra, gorra roja</td>
-                <td class="table-total">$1500</td>
-            </tr>
-            <tr class="table-product">
-                <td class="table-noPedido">3</td>
-                <td class="table-nombre">Chivo Dios</td>
-                <td class="table-direccion">Calle del olimpo #777 Col. Los dioses</td>
-                <td class="table-telefono">2381234567</td>
-                <td class="table-productos">Camisa negra, gorra roja</td>
-                <td class="table-total">$1500</td>
+
+
+            <tr class="table-product" *ngFor="let a of dataA[0]">
+                <td class="table-noPedido">{{a.id}}</td>
+                <td class="table-nombre">{{a.data.envio[0].nombre}}</td>
+                <td class="table-direccion">{{a.data.envio[0].calle}} {{a.data.envio[0].numeroE}},
+                  {{a.data.envio[0].colonia}},{{a.data.envio[0].ciudad}}.
+                </td>
+                <!-- <td class="table-telefono">2381234567</td> -->
+                <td class="table-productos">
+                <p *ngFor="let c of a.data.products">{{c.count}} {{c.name}},</p>
+                <td class="table-total">${{a.data.total}}</td>
             </tr>
         </table>
     </div>

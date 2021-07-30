@@ -27,7 +27,8 @@ import { OrdersComponent } from './orders/orders.component';
     RouterModule,
     FlexLayoutModule,
     BackendRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class BackendModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirestoresService } from 'src/app/services/firestores.service';
 
 @Component({
   selector: 'app-orders',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  dataA =[]
+  constructor(private fire:FirestoresService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.data()
   }
 
+
+
+  data(){
+    this.fire.getPedidosAdmin().then(data=>{
+      this.dataA.push(data);
+      console.log(this.dataA)
+
+    });
+
+  }
 }

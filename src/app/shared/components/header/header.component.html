@@ -17,10 +17,9 @@
 
       <div class="navbar-profile-input">
         <input type="text" [(ngModel)]='textoDeInput' (ngModelChange)="searchingProducts(textoDeInput)" name="textoDeInput"  placeholder="Buscar">
-        <div class="contentResults" *ngFor="let searchProduct of resultSearch">
+        <div class="contentResults" *ngFor="let searchProduct of data[0]">
           <h1 class="searchResults" routerLink="/product-details/{{ searchProduct.id }}">{{ searchProduct.data.name }}</h1>
-          <h1 class="searchResults" routerLink="/product-details/{{ searchProduct.id }}">{{ searchProduct.data.name }}</h1>
-          <h1 class="searchResults" routerLink="/product-details/{{ searchProduct.id }}">{{ searchProduct.data.name }}</h1>
+
         </div>
       </div>
     </div>

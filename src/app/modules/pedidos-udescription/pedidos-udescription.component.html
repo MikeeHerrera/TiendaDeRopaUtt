@@ -1,0 +1,34 @@
+<br><br><br><br><br><br>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">piezas</th>
+      <th scope="col">nombre</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">subtotal</th>
+      <th scope="col">imagen</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of pedido[0]">
+      <th scope="row">{{a.id}}</th>
+      <td>{{a.count}}</td>
+      <td>{{a.name}}</td>
+      <td>{{a.description}}</td>
+      <td>${{a.count * a.price}}</td>
+      <td><img src="{{a.img}}" alt="..." class="img-thumbnail">
+      </td>
+    </tr>
+    <tr *ngFor="let a of data">
+      <td>
+     <h1>Total  ${{a.info.total}} </h1>
+
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+

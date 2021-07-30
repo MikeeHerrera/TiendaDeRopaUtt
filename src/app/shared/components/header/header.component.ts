@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   public user: any;
   textoDeInput: string = null
   resultSearch = [];
+  array=[];
   data=[];
   constructor(
     public auth: AuthorizationService,
@@ -33,12 +34,22 @@ export class HeaderComponent implements OnInit {
     }
   }
   async searchingProducts(name){
+    this.array =[]
     const nameCamelCase = name.toLowerCase()
+
     try {
-     this.data.push( await this.fire.searchProducts(nameCamelCase))
+    this.array.push( await this.fire.searchProducts(nameCamelCase))
+     this.array.map(data=>{
+       this.data =[];
+        this.data.push(data)
+
+      })
+      console.log(this.data)
+    //  this.data.push( await this.fire.searchProducts(nameCamelCase))
       // this.resultSearch.push(response)
-       this.data.map(item => this.resultSearch.push(item ))
-        console.log(this.data)
+      //  this.data.map(item => this.resultSearch.push(item ))
+      // console.log(response)
+        // console.log(this.data)
 
 
     } catch (err) {
